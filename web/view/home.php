@@ -31,7 +31,7 @@
             <img onclick="modalOnClick(this)" class="modalImage" src="images/origami-models/origami-rose.JPG" alt="Rose">
             <img onclick="modalOnClick(this)" class="modalImage" src="images/origami-models/origami-koi.JPG" alt="Koi Fish">
             <img onclick="modalOnClick(this)" class="modalImage" src="images/origami-models/origami-koi-fish.JPG" alt="Koi Fish Framed">
-            <img onclick="modalOnClick(this)" class="modalImage" src="images/origami-models/origami-snoopy.JPG" alt="Snoopy Framed">
+            <img onclick="modalOnClick(this)" class="modalImage" src="images/origami-models/origami-snoopy.jpg" alt="Snoopy Framed">
             <img onclick="modalOnClick(this)" class="modalImage" src="images/origami-models/origami-panda.JPG" alt="Panda">
             <img onclick="modalOnClick(this)" class="modalImage" src="images/origami-models/origami-bouque.JPG" alt="Floran Arrangement">
         </section>
