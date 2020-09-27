@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Carlos Macedo</h1>
-        <img src="images/carlos-and-lexie-profile-picture-small.JPG" alt="Carlos Profile Picture">
+        <img src="images/carlos-and-lexie-profile-picture-small.jpg" alt="Carlos Profile Picture">
     </header>
     <main>
         <section class="introductionSection">
