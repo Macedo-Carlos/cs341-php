@@ -6,6 +6,7 @@ function buildProductsGrid($productsList){
     $arrlength = count($productsList);
     
     for ($i = 0; $i < $arrlength; $i++) {
+        $qtyId = $productsList[$i]['productName']."-quantity";
         $productsGrid .= '<div class="productGridItem">';
         $productsGrid .= "<a href='index.php?action=details&itemNumber=$i'><img class='product-image-in-grid' src='".$productsList[$i]['productImageUrl']."' alt='".$productsList[$i]['productName']."'></a>";
         $productsGrid .= "<p class='product-name'>".$productsList[$i]['productName']."</p>";
@@ -13,7 +14,7 @@ function buildProductsGrid($productsList){
         $productsGrid .= "<p>$".$productsList[$i]['productPrice']."</p>";
         $productsGrid .= "<label for='".$productsList[$i]['productName']."-quantity'>Quantity</label>";
         $productsGrid .= "<input type='number' class='product-quantity-input' id='".$productsList[$i]['productName']."-quantity' name='".$productsList[$i]['productName']."-quantity' min='1' max='10' value='1'>";
-        $productsGrid .= "<button class='add-to-cart-button' type='button'>Add to Cart</button>";
+        $productsGrid .= "<button class='add-to-cart-button' onclick=saveToLocalStorage('$i','$qtyId')>Add to Cart</button>";
         $productsGrid .= '</div>';
     }
     $productsGrid .= '<div>';
@@ -28,12 +29,13 @@ function buildProductsDetails($productsList, $itemNumber){
     $productCard .= "<img src='".$productsList[$i]['productImageUrl']."' alt='".$productsList[$i]['productName']."'>";
     $productCard .= '</section>';
 
+    $qtyId = $productsList[$i]['productName']."-quantity";
     $productCard .= "<section class='text-details-section'>";
     $productCard .= "<h2>".$productsList[$i]['productName']."</h2>";
     $productCard .= "<p>SKU ".$productsList[$i]['productSKU']."</p>";
     $productCard .= "<label for='".$productsList[$i]['productName']."-quantity'>Quantity</label>";
     $productCard .= "<input type='number' class='product-quantity-input' id='".$productsList[$i]['productName']."-quantity' name='".$productsList[$i]['productName']."-quantity' min='1' max='10' value='1'>";
-    $productCard .= "<button class='add-to-cart-button' type='button'>Add to Cart</button>";
+    $productCard .= "<button class='add-to-cart-button' onclick=saveToLocalStorage('$i','$qtyId')>Add to Cart</button>";
     $productCard .= "<hr>";
     $productCard .= "<p>".$productsList[$i]['productDescription']."</p>";
     $productCard .= '</section>';

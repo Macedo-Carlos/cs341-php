@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" async></script>
     <title>Product Details | Fake Fruit</title>
 </head>
 <body>
+    <div class="message-box">Temporary text</div>
     <header>
-    <a href="index.php?action=home"><img id="page-logo"src="images/site/fake_fruit_logo_upper_f.png" alt="Fake Fruit Logo"></a>
-    <div id="page-banner">Ceramic Fruit For All Collectors | Est. 1965</div>
+        <a class="cart-icon" href="index.php?action=home"><img src="images/site/shoping_cart.svg" alt="Shoping Cart"></a>
+        <a href="index.php?action=home"><img id="page-logo"src="images/site/fake_fruit_logo_upper_f.png" alt="Fake Fruit Logo"></a>
+        <div id="page-banner">Ceramic Fruit For All Collectors | Est. 1965</div>
     </header>
     <main>
         <?php echo $produtsDetails; ?>
