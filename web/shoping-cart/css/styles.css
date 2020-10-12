@@ -135,6 +135,10 @@ input[type=number] {
     opacity: 0.7;
 }
 
+a.add-to-cart-button {
+    text-decoration: none;
+}
+
 .productCardContainer {
     display: grid;
     grid-template-columns: 1.25fr 1.75fr;
@@ -157,6 +161,88 @@ input[type=number] {
 
 .text-details-section hr{
     width: 100%;
+}
+
+/*Cart styles*/
+
+#cart-table {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    font-size: 1.5em;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+.cart-image {
+    max-width: 200px;
+}
+
+.cart-image-cell {
+    width: 300px;
+    text-align: center;
+}
+
+.name-label {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 5px;;
+}
+
+.sku-label {
+    font-size: .75em;
+    margin: 5px;
+}
+
+.qty-subtotal-cell, .qty-cell {
+    text-align: center;
+}
+
+.qty-adjust-button {
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 10px;
+}
+
+.qty-adjust-button:hover {
+    opacity: 0.7;
+}
+
+.total-label-cell {
+    text-align: right;
+    font-weight: bolder;
+}
+
+.total-cell {
+    font-weight: bolder;
+}
+
+.total-cell, .total-label-cell {
+    border-top: 1px solid black;
+}
+
+#empty-cart {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
+}
+
+#buttons-line {
+    text-align: center;
+}
+
+#buttons-line a{
+    margin: 20px 10px;
+    font-size: 1.25em;
 }
 
 footer {

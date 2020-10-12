@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Get the functions library
 require_once 'library/functions.php';
@@ -24,7 +25,18 @@ case 'details':
     $produtsDetails = buildProductsDetails($productsList, $itemNumber);
     include 'view/item-details.php';
 break;
+case 'cart':
+    if (isset($_SESSION['cart'])){
+        //Get the cart grid
+        $cartGrid = buildCartGrid($productsList, $_SESSION['cart']);
+    } else {
+        //Create the empty cart grid to show
+        $cartGrid = "<div id='empty-cart'><p>Your cart is empty</p><a href='index.php' class='add-to-cart-button'>Continue Shopping</a></div>";
+    }
+    include 'view/cart.php';
+break;
 default:
+    $produtsGrid = buildProductsGrid($productsList);
     include 'view/home.php';
 break;
 }

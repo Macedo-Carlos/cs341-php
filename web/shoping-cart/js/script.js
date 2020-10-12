@@ -11,7 +11,7 @@ function updateCartTotal() {
     
 } */
 
-// XMLHttp request to PHP page in the server
+/* // XMLHttp request to PHP page in the server
 function ajaxPost(){
     if (localStorage.getItem("cart") === null) {
         alert("Add items to your cart")
@@ -35,6 +35,53 @@ function ajaxPost(){
         //Send the request to the server and wait for the response
         serverRequest.send(dataString);
         document.getElementById("statusElement").innerHTML = "processing server request..."
+    }
+} */
+
+// XMLHttp request to PHP cart-model page in the server
+function ajaxPost(itemIdentifier, qtyContainerId, action){
+    //Create XMLHttpRequest object
+    var serverRequest = new XMLHttpRequest;
+    //Collect the variables that will be send to the PHP file
+    var url = "model/cart-model.php";
+    var $itemName = itemIdentifier;
+    var $itemQuantity = document.getElementById(qtyContainerId).value;
+    var $cartAction = action;
+    var dataString = "itemName=" + $itemName + "&itemQuantity=" + $itemQuantity + "&cartAction=" + $cartAction;
+    //Open the connection
+    serverRequest.open("POST", url, true);
+    //Set content type header information
+    serverRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //Access the onreadystatechange event of the server request object
+    serverRequest.onreadystatechange = function(){
+        if(serverRequest.readyState == 4 && serverRequest.status == 200) {
+            var returnData = serverRequest.responseText;
+            document.getElementById('statusElement').innerHTML = returnData;
+        }
+    }
+    //Send the request to the server and wait for the response
+    serverRequest.send(dataString);
+    document.getElementById("statusElement").innerHTML = "processing server request..."
+
+    return returnData;
+}
+
+function adjustItemQuantity(qtySpanId, adjustQty, itemPrice, subtotalSpanId,lineId, itemIdentifier){
+    var itemQty = parseInt(document.getElementById(qtySpanId).innerHTML);
+    var adjustedItemQty = parseInt(adjustQty) + itemQty;
+    var adjustedSubtotal = adjustedItemQty * parseInt(itemPrice);
+    if (adjustedItemQty <= 0) {
+        document.getElementById(qtySpanId).innerHTML = adjustedItemQty;
+        document.getElementById(subtotalSpanId).innerHTML = adjustedSubtotal;
+        response = ajaxPost(itemIdentifier,qtySpanId,'adjustCart');
+        document.getElementById('cart-total').innerHTML = response;
+        var lineItem = document.getElementById(lineId);
+        lineItem.remove();
+    } else {
+        document.getElementById(qtySpanId).innerHTML = adjustedItemQty;
+        document.getElementById(subtotalSpanId).innerHTML = adjustedSubtotal;
+        response = ajaxPost(itemIdentifier,qtySpanId,'adjustCart');
+        document.getElementById('cart-total').innerHTML = response;
     }
 }
 

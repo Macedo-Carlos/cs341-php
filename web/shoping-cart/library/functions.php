@@ -14,7 +14,7 @@ function buildProductsGrid($productsList){
         $productsGrid .= "<p>$".$productsList[$i]['productPrice']."</p>";
         $productsGrid .= "<label for='".$productsList[$i]['productName']."-quantity'>Quantity</label>";
         $productsGrid .= "<input type='number' class='product-quantity-input' id='".$productsList[$i]['productName']."-quantity' name='".$productsList[$i]['productName']."-quantity' min='1' max='10' value='1'>";
-        $productsGrid .= "<button class='add-to-cart-button' onclick=saveToLocalStorage('$i','$qtyId')>Add to Cart</button>";
+        $productsGrid .= "<button class='add-to-cart-button' onclick=ajaxPost('$i','$qtyId','addToCart')>Add to Cart</button>";
         $productsGrid .= '</div>';
     }
     $productsGrid .= '<div>';
@@ -42,6 +42,30 @@ function buildProductsDetails($productsList, $itemNumber){
 
     $productCard .= '<div>';
     return $productCard;
+}
+
+function buildCartGrid($productList, $cartList){
+    $subTotal = 0;
+    $cartTotal = 0;
+    $cartGrid = "<table id='cart-table'><tr><th></th><th>Item</th><th>Qty</th><th>Subtotal</th></tr>";
+    foreach ($cartList as $key => $value){
+        $price = $productList[$key]['productPrice'];
+        $subTotal = $value * $price;
+        $cartTotal += $subTotal;
+        $productUrl = $productList[$key]['productImageUrl'];
+        $productName = $productList[$key]['productName'];
+        $productSku = $productList[$key]['productSKU'];
+        $qtySpanId = $productList[$key]['productName'] . "-qty-span";
+        $subtotalSpanId = $productList[$key]['productName'] . "-subtotal-span";
+        $itemPrice = $productList[$key]['productPrice'];
+        $lineId = $productList[$key]['productName'] . "-item-line";
+        $cartGrid .= "<tr id='$lineId'><td class='cart-image-cell'><img class='cart-image' src='$productUrl' alt='$productName Thumbnail'></td><td><p class='name-label'>$productName</p><p class='sku-label'>SKU $productSku</p></td><td class='qty-cell'><img class='qty-adjust-button' src='images/site/minus_button.svg' alt='Minus Button' onclick=adjustItemQuantity('$qtySpanId','-1','$itemPrice','$subtotalSpanId','$lineId','$key')>  <span id='$qtySpanId'>$value</span> ea  <img class='qty-adjust-button' src='images/site/plus_button.svg' alt='Plus Button' onclick=adjustItemQuantity('$qtySpanId','1','$itemPrice','$subtotalSpanId','$lineId','$key')></td><td class='qty-subtotal-cell'>$<span id='$subtotalSpanId'>$subTotal</span></td></tr>";
+    }
+    $cartGrid .= "<tr><td></td><td></td><td class='total-label-cell'>Total</td><td class='qty-subtotal-cell total-cell'>$<span id='cart-total'>$cartTotal</span></td></tr>";
+    $cartGrid .= "</table>";
+    $cartGrid .= "<div id='buttons-line'><a href='index.php' class='add-to-cart-button'>Continue Shopping</a><a href='index.php?action=checkout' class='add-to-cart-button'>Check Out</a></div>";
+    
+    return $cartGrid;
 }
 
 ?>

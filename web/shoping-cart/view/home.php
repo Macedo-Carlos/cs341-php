@@ -9,13 +9,14 @@
 </head>
 <body>
     <header>
-        <a class="cart-icon" href="index.php?action=home"><img src="images/site/shoping_cart.svg" alt="Shoping Cart"></a>
+        <a class="cart-icon" href="index.php?action=cart"><img src="images/site/shoping_cart.svg" alt="Shoping Cart"></a>
         <a href="index.php?action=home"><img id="page-logo"src="images/site/fake_fruit_logo_upper_f.png" alt="Fake Fruit Logo"></a>
         <div id="page-banner">Ceramic Fruit For All Collectors | Est. 1965</div>
     </header>
     <main>
         <?php echo $produtsGrid; ?>
     </main>
+    <div id="statusElement"></div>
     <footer>
         <hr>
         <p>&copy; Carlos Macedo</p>
