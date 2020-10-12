@@ -8,6 +8,7 @@ require_once '../library/product_list.php';
 $itemIndex = intval($_POST['itemName']);
 $itemQuantity = intval($_POST['itemQuantity']);
 
+
 $action = filter_input(INPUT_POST, 'cartAction');
     if ($action == NULL){
         $action = filter_input(INPUT_GET, 'cartAction');
@@ -15,6 +16,10 @@ $action = filter_input(INPUT_POST, 'cartAction');
             $action = 'addToCart';
         }
     }
+
+$_SESSION['testVar'] = $action;
+$_SESSION['testVar2'] = $itemIndex;
+$_SESSION['testVar3'] = $itemQuantity;
 
 switch ($action){
 case 'addToCart':
@@ -50,7 +55,7 @@ function addToCart($itemIndex, $itemQuantity,$productsList){
         $_SESSION['cart'] = $cartArray;
     }
 
-    $responseString = "<p>There are " . $productsList[$itemIndex]["productName"] . " X " . $_SESSION['cart'][$itemIndex] . " in the cart</p>";
+    $responseString = "<p>There are now " . $_SESSION['cart'][$itemIndex] . " " . $productsList[$itemIndex]["productName"] . " in your basket</p>";
 
     return $responseString;
 }
@@ -58,16 +63,20 @@ function addToCart($itemIndex, $itemQuantity,$productsList){
 //Adjust qty of items in the cart
 function adjustCart($itemIndex, $itemQuantity,$productsList){
     //Check to see if the cart array has been stored in the session
-
     if (isset($_SESSION['cart'])){
         //Add items to the cart
         $cartArray = $_SESSION['cart'];
-        if (isset($cartArray[$itemIndex])){
-            $cartArray[$itemIndex] += $itemQuantity;
+        if ($itemQuantity == 0){
+            unset($cartArray[$itemIndex]);
             $_SESSION['cart'] = $cartArray;
         } else {
-            $cartArray[$itemIndex] = $itemQuantity;
-            $_SESSION['cart'] = $cartArray;
+            if (isset($cartArray[$itemIndex])){
+                $cartArray[$itemIndex] += $itemQuantity;
+                $_SESSION['cart'] = $cartArray;
+            } else {
+                $cartArray[$itemIndex] = $itemQuantity;
+                $_SESSION['cart'] = $cartArray;
+            }
         }
     } else {
         //Create the cart and add items to it
@@ -75,9 +84,17 @@ function adjustCart($itemIndex, $itemQuantity,$productsList){
         $_SESSION['cart'] = $cartArray;
     }
 
-    $response = "<p>There are " . $productsList[$itemIndex]["productName"] . " X " . $_SESSION['cart'][$itemIndex] . " in the cart</p>";
+    $response = calculateTotal($productsList);
 
     return $response;
+}
+
+function calculateTotal($productsList){
+    $total = 0;
+    foreach($_SESSION['cart'] as $key => $value){
+        $total += intval($productsList[$key]['productPrice']) * $value;
+    }
+    return $total;
 }
 
 ?>

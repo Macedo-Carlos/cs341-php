@@ -17,16 +17,16 @@ $action = filter_input(INPUT_POST, 'action');
 
 switch ($action){
 case 'home':
-    $produtsGrid = buildProductsGrid($productsList);
+    $productsGrid = buildProductsGrid($productsList);
     include 'view/home.php';
 break;
 case 'details':
     $itemNumber = filter_input(INPUT_GET, 'itemNumber');
-    $produtsDetails = buildProductsDetails($productsList, $itemNumber);
+    $productsDetails = buildProductsDetails($productsList, $itemNumber);
     include 'view/item-details.php';
 break;
 case 'cart':
-    if (isset($_SESSION['cart'])){
+    if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
         //Get the cart grid
         $cartGrid = buildCartGrid($productsList, $_SESSION['cart']);
     } else {
@@ -36,7 +36,7 @@ case 'cart':
     include 'view/cart.php';
 break;
 default:
-    $produtsGrid = buildProductsGrid($productsList);
+    $productsGrid = buildProductsGrid($productsList);
     include 'view/home.php';
 break;
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="index.php?action=home"><img id="page-logo"src="images/site/cornucopia_logo.png" alt="Fake Fruit Logo"></a>
+        <a href="index.php?action=home"><img id="page-logo"src="images/site/cornucopia_logo2.png" alt="Fake Fruit Logo"></a>
         <div id="page-banner">Realistically Ceramic Fruit For All Collectors</div>
     </header>
     <main>
