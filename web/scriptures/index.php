@@ -13,6 +13,6 @@ function testDb(){
 
 $data = testDb();
 
-echo $data;
+print_r($data);
 
 ?>
