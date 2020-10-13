@@ -50,3 +50,16 @@ CREATE TABLE repairOrders (
     repairLabor INTEGER NULL REFERENCES services (id),
     repairEmployeeAsigned INTEGER NOT NULL REFERENCES employees (id)
 );
+
+/* Table for scripture app */
+
+CREATE TABLE scriptures (
+	id SERIAL NOT NULL PRIMARY KEY,
+	book VARCHAR(50) NOT NULL,
+    chapter SMALLINT NOT NULL,
+    verseFrom SMALLINT NULL,
+    content VARCHAR NULL
+);
+
+INSERT INTO scriptures(book,chapter,verseFrom,content)
+VALUES('John', 1, 5, 'And the light shineth in darkness; and the darkness comprehended it not.');
