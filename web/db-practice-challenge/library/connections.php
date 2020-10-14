@@ -2,23 +2,26 @@
 /* Database connections */
 
 function herokuConnect() {
+    try
+    {
+    $dbUrl = getenv('DATABASE_URL');
 
-    $host = 'ec2-34-235-62-201.compute-1.amazonaws.com';
-    $user = 'fparwgazrxnhuv';
-    $password = '8c6f36544ef13b61414f56d1c108545e75b2f8645684479d8cd03908cc1abc8f';
-    $dbname = 'd9la49f1vo2jbk';
-    $port = '5432';
-    $dns = 'pgsql:host=' . $host . ';port=' . $port . ';dbname=' . $dbname;
-    $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+    $dbOpts = parse_url($dbUrl);
 
-    try {
-        $herokuLink = new PDO($dns, $user, $password, $options);
-        return $herokuLink;
-        echo '$herokuLink worked successfully<br>';
-    } catch (PDOException $exc) {
-        /* header('location:/acme/view/500.php');
-        echo '$herokuLink did not work successfully<br>'; */
-        exit;
+    $dbHost = $dbOpts["host"];
+    $dbPort = $dbOpts["port"];
+    $dbUser = $dbOpts["user"];
+    $dbPassword = $dbOpts["pass"];
+    $dbName = ltrim($dbOpts["path"],'/');
+
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch (PDOException $ex)
+    {
+    echo 'Error!: ' . $ex->getMessage();
+    die();
     }
 }
 
