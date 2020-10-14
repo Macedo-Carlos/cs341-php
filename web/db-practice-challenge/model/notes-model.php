@@ -26,13 +26,13 @@ function getScripturesByBook($bookName){
     // Create a connection object using the heroku connection function
     $db = herokuConnect();
     // The SQL statement
-    $sql = 'SELECT * FROM scriptures WHERE book = :book';
+    $sql = "SELECT * FROM scriptures WHERE book ILIKE '%$bookName%'";
     // Create the prepared statement using the heroku connection
     $stmt = $db->prepare($sql);
     // The next line replaces the placeholders in the SQL
     // statement with the actual values in the variables
     // and tells the database the type of data it is
-    $stmt->bindValue(':book', $bookName, PDO::PARAM_STR);
+    //$stmt->bindValue(':book', $bookName, PDO::PARAM_STR);
     // Query the data
     $stmt->execute();
     // Ask how many rows changed as a result of our insert

@@ -1,8 +1,18 @@
-INSERT INTO scriptures(book,chapter,verseFrom,content)
+CREATE TABLE scriptures2 (
+id SERIAL NOT NULL PRIMARY KEY,
+book VARCHAR(50) NOT NULL,
+chapter SMALLINT NOT NULL,
+verseFrom SMALLINT NOT NULL,
+content TEXT NOT NULL
+);
+
+INSERT INTO scriptures2(book,chapter,verseFrom,content)
+VALUES ('John',1,5,'And the light shineth in darkness; and the darkness comprehended it not.');
+INSERT INTO scriptures2(book,chapter,verseFrom,content)
 VALUES ('Doctrine and Covenants',88,49,'The light shineth in darkness, and the darkness comprehendeth it not; nevertheless, the day shall come when you shall comprehend even God, being quickened in him and by him.');
-INSERT INTO scriptures(book,chapter,verseFrom,content)
+INSERT INTO scriptures2(book,chapter,verseFrom,content)
 VALUES ('Doctrine and Covenants',93,28,'He that keepeth his commandments receiveth truth and light, until he is glorified in truth and knoweth all things.');
-INSERT INTO scriptures(book,chapter,verseFrom,content)
+INSERT INTO scriptures2(book,chapter,verseFrom,content)
 VALUES ('Mosiah',16,9,'And it came to pass that after king Benjamin had made an end of teaching his sons, that he waxed old, and he saw that he must very soon go the way of all the earth; therefore, he thought it expedient that he should confer the kingdom upon one of his sons.');
 
 SELECT * FROM scriptures;
