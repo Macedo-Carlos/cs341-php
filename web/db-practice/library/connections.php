@@ -14,7 +14,7 @@ function herokuConnect() {
     try {
         $herokuLink = new PDO($dns, $user, $password, $options);
         return $herokuLink;
-        echo '$herokuLink worked successfully<br>';
+        /*echo '$herokuLink worked successfully<br>';*/
     } catch (PDOException $exc) {
         /* header('location:/acme/view/500.php');
         echo '$herokuLink did not work successfully<br>'; */
