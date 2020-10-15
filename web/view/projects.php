@@ -22,6 +22,10 @@ $pageTitle = "Projects"
                 <a href="team-projects/03Teach/week3.php"><img src="images/activities/form.jpg" alt="Form Practice Application"></a>
                 <figcaption>Week 3 - Forms</figcaption>
             </figure>
+            <figure>
+                <a href="team-projects/05Teach/index.php?action=home"><img src="images/activities/database-w-arrow.jpg" alt="Database Practice Application"></a>
+                <figcaption>Week 3 - Forms</figcaption>
+            </figure>
         </section>
 
         <section class="commentSideSection">
