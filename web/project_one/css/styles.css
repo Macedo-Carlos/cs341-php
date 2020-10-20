@@ -6,14 +6,21 @@ body {
 }
 
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
   background-color: #001738;
 }
 
+header img {
+  max-width: 100px;
+}
+
 header h1 {
-  padding: 25px 20%;
   color: #d4a97d;
-  margin: 0;
-  font-size: 3.15em
+  font-size: 3.15em;
+  margin-left: 40px;
 }
 
 main {

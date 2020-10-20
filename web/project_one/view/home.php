@@ -13,11 +13,12 @@
     </header>
     <main>
         <h1><?php echo $message; ?></h1>
+        <p>This is a list of the open repair orders.</p>
         <?php echo $repairOrdersList; $message = "";?>
         <form action="index.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="action" value="search-view">
         <?php if ($showButton){ echo "<a href='index.php?action=home' class='formButton'>Go Back</a>"; } ?>
-        <button class="formButton" type="submit">Search By Book</button>
+        <button class="formButton" type="submit">Search Orders</button>
     </form>
     </main>
 </body>
