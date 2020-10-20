@@ -17,8 +17,8 @@ $action = filter_input(INPUT_POST, 'action');
 
 switch ($action){
 case 'home':
-    $scriptures = getAllNotes();
-    $scripturesList = scripturesGrid($scriptures);
+    $repairOrdes = getOpenOrders();
+    $repairOrdersList = getRepairOrdersList($repairOrdes);
     include 'view/home.php';
     break;
 case 'search-view':

@@ -5,11 +5,11 @@
  */
 
 //Retrieve query results from database
-function getAllNotes(){
+function getOpenOrders(){
     // Create a connection object using the heroku connection function
     $db = herokuConnect();
     // The SQL statement
-    $sql = 'SELECT * FROM scriptures';
+    $sql = "SELECT * FROM repairorders, customers WHERE repairorders.customer_id = customers.id AND repairorders.current_rostatus != '0'";
     // Create the prepared statement using the heroku connection
     $stmt = $db->prepare($sql);
     // Run the query

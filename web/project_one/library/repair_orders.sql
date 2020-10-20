@@ -37,3 +37,8 @@ CREATE TABLE repairOrders (
     current_roTye roType
 );
 
+/* Check ENUM possible values for rostatus
+SELECT enum_range(NULL::rostatus);*/
+
+/* Change possible values for rostatus 
+ALTER TYPE rostatus ADD VALUE '0' BEFORE '1';*/
