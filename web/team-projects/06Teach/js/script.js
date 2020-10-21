@@ -28,7 +28,7 @@ $('#scriptureform').on('submit', function(e) {
     XHTTP.onreadystatechange = function(){        
         if (XHTTP.readyState == 4 && XHTTP.status == 200)
         {
-            //do after load
+            alert("We have made contact");
         }
         else{
             //if failfure
