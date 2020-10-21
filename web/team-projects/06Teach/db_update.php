@@ -1,6 +1,6 @@
 <?php
 
-if (count($_POST)){
+/*if (count($_POST)){*/
     $book = $_POST['book'];
     $chapter = $_POST['chapter'];
     $verse = $_POST['verse'];
@@ -18,7 +18,7 @@ if (count($_POST)){
     }
     $stmt->closeCursor();
     print "Success!";
-}
+/*}*/
 
 ?>
     
