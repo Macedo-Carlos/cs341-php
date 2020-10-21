@@ -15,7 +15,7 @@
     <main>
         <h1><?php echo $message; ?></h1>
         <?php echo $scripturesList; $message = ""?>
-        <form>
+        <form id="scriptureform">
             <label for="book">Book</label>
             <input type="text" id="book" name="book">
             <label for="chapter">Chapter</label>

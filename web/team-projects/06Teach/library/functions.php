@@ -28,7 +28,7 @@ function getTopicBoxes($topics){
     $block = "";
     foreach ($topics as $topic) {
         $block .= "<label for=$topic[topicname]>$topic[topicname]</label>";
-        $block .= "<input type='checkbox' class='topics' name=$topic[topicname] value=$topic[topicname]>";
+        $block .= "<input type='checkbox' class='topics' name=$topic[topicname] value=$topic[id]>";
     }
     return $block;
 }
