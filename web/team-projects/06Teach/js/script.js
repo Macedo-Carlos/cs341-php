@@ -15,7 +15,7 @@ $('#scriptureform').on('submit', function(e) {
     })    
     
     //add to string
-    data += "book=" + book +
+    data = "book=" + book +
             "&chapter=" + chapter + 
             "&verse=" + verse + 
             "&content=" + content +

@@ -24,7 +24,11 @@ $pageTitle = "Projects"
             </figure>
             <figure>
                 <a href="team-projects/05Teach/index.php?action=home"><img src="images/activities/database-w-arrow.jpg" alt="Database Practice Application"></a>
-                <figcaption>Week 3 - Forms</figcaption>
+                <figcaption>Week 5 - Scripture Reference</figcaption>
+            </figure>
+            <figure>
+                <a href="team-projects/06Teach/index.php?action=home"><img src="images/activities/topic_references.jpg" alt="Database Practice Application"></a>
+                <figcaption>Week 6 - Scripture Reference w/ Topics</figcaption>
             </figure>
         </section>
 
@@ -42,6 +46,19 @@ $pageTitle = "Projects"
             <figure>
                 <a href="shoping-cart/index.php"><img src="images/activities/cart.jpg" alt="Shoping Cart Application"></a>
                 <figcaption>Week 3 - Shoping Cart</figcaption>
+            </figure>
+        </section>
+
+        <section class="commentSideSection">
+            <h2>App Projects</h2>
+            <p>When we are given the opportunity to develop our own applications, we have a chance to apply the concepts we are learning in a creative way. We also can learn to identify gaps in our knowledge, try and fill the gaps by doing research and by asking questions.</p>
+            <p>We can drive ourselves crazy and have fun at the same time.</p>
+        </section>
+
+        <section class="imagesSection">
+            <figure>
+                <a href="project_one/index.php?action=home"><img src="images/activities/repair_orders_logo.jpg" alt="Repair Orders Logo"></a>
+                <figcaption>Project 1 - Repair Orders Manager</figcaption>
             </figure>
         </section>
 
