@@ -31,8 +31,8 @@
                 <input type="text" id="customerphone" name="customerphone" placeholder="123-456-7890" required>
             </div>
             <div>
-                <label class="required" for="customeraddress" >Phone Number</label>
-                <input type="textarea" id="customeraddress" name="customeraddress" placeholder="Please enter customer's address here" rows="4" cols="50" required>
+                <label class="required" for="customeraddress" >Address</label>
+                <textarea id="customeraddress" name="customeraddress" rows="4" cols="50" placeholder="Enter customer's address..."></textarea>
             </div>
             <p>Please check to make sure that all the information you provided is correct.</p>
             <button class="formButton" type="submit">Add New Customer</button>
