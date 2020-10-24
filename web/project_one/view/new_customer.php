@@ -16,7 +16,6 @@
         <h1><?php echo $message; ?></h1>
         <h1>Add New Customer</h1>
         <form action="index.php" method="POST" enctype="multipart/form-data">
-            <h1>Update Account Information</h1>
             <p>All the information is required in order to update an account.</p>
             <div>
                 <label class="required" for="customername">Fist Name</label>
