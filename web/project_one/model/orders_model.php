@@ -40,6 +40,27 @@ function getCustomers(){
     return $response;
 }
 
+function addNewCustomer($customername, $customerlastname, $customerphone, $customeraddress){
+    // Create a connection object using the db connection function
+    $db = herokuConnect();
+    // The SQL statement
+    $sql = "INSERT INTO customers(customername, customerlastname, customerphone, customeraddress)
+    VALUES ('$customername', '$customerlastname', '$customerphone', '$customeraddress')";
+    // Create the prepared statement using the db connection
+    $stmt = $db->prepare($sql);
+    // Insert the data
+    $stmt->execute();
+    // Ask how many rows changed as a result of our insert
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
+}
+
+
+
+
 function getScripturesByBook($bookName){
     // Create a connection object using the heroku connection function
     $db = herokuConnect();

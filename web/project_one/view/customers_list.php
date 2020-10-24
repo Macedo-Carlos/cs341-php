@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/site/repair_orers_logo.svg" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Open Orders | Repair Orders Manager</title>
+    <title>Customers | Repair Orders Manager</title>
 </head>
 <body>
     <header>
@@ -17,6 +17,18 @@
         <h1>Customers</h1>
         <p>This is a list of our customers.</p>
         <?php echo $customersList; $message = "";?>
+        <a class="formButton" href="index.php?newCustomer">Add New Customer</a>
     </main>
+
+    <section class="side">
+        <nav>
+            <ul>
+                <li><a href="index.php?action=home">Open Orders</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Models</a></li>
+            </ul>
+        </nav>
+    </section>
+
 </body>
 </html>
