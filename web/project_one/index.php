@@ -43,11 +43,16 @@ case 'addNewCustomer':
     exit; 
   }
 
+  // Get customers list
+  $customers = getCustomers();
+  $customersList = getCustomersList($customers);
+
   // Send the data to the model
   $regOutcome = addNewCustomer($customername, $customerlastname, $customerphone, $customeraddress);
   // Check and report the result
   if($regOutcome === 1){
     $message = "$customername $customerlastname has been added to the customer's list.";
+    
     include 'view/customers_list.php';
     exit;
   } else {
