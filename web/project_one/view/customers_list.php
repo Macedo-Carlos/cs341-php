@@ -17,7 +17,7 @@
         <h1>Customers</h1>
         <p>This is a list of our customers.</p>
         <?php echo $customersList; $message = "";?>
-        <a class="formButton" href="index.php?newCustomer">Add New Customer</a>
+        <a class="formButton" href="index.php?action=newCustomer">Add New Customer</a>
     </main>
 
     <section class="side">

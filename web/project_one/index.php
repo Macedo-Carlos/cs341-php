@@ -26,6 +26,9 @@ case 'customersList':
   $customersList = getCustomersList($customers);
   include 'view/customers_list.php';
 break;
+case 'newCustomer':
+  include 'view/new_cutomer.php';
+break;
 case 'addNewCustomer':
   // Filter and store the data
   $customername = filter_input(INPUT_POST, 'customername', FILTER_SANITIZE_STRING);
