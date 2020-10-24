@@ -25,7 +25,7 @@ break;
 case 'customersList':
     $customers = getCustomers();
     $customersList = getCustomersList($customers);
-    include 'view/home.php';
+    include 'view/customers_list.php';
 break;
 default:
     $scriptures = getAllNotes();
