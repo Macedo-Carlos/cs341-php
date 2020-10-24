@@ -11,16 +11,15 @@ function getRepairOrdersList($repairOrders){
     return $block;
 }
 
-function scriptureDetails($scriptures){
-    $block = '<div>';
-    foreach ($scriptures as $scripture) {
-        $block .= '<p>';
-        $block .= "<span class='scrRef'>$scripture[book] $scripture[chapter]:$scripture[versefrom]</span> - ";
-        $block .= "\"<span class='scrCont'>$scripture[content]</span>\"";
-        $block .= '</p>';
+function getCustomersList($customers){
+    $block = "<table class='lists-table'>
+                <tr><th>Customer Name</th><th>Customer Phone</th><th></th></tr>";
+    foreach ($customers as $customer) {
+        $currentStatus = getStatusDescription($order['rostatus']); 
+        $block .= "<tr><td>$customer[full_name]</td><td>$customer[customerphone]</td><td>$customer[id]</td></tr>";
     }
-    $block .= '</div>';
-    return $block;
+    $block .= '</table>';
+    return $block; 
 }
 
 function getStatusDescription($statusEnum){

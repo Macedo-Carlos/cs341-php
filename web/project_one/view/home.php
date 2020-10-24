@@ -23,5 +23,15 @@
             <button class="formButton" type="submit">Search Orders</button>
         </form>
     </main>
+    
+    <section class="side">
+        <nav>
+            <ul>
+                <li><a href="index.php?action=customersList">Customers</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Models</a></li>
+            </ul>
+        </nav>
+    </section>
 </body>
 </html>

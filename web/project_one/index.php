@@ -21,29 +21,10 @@ case 'home':
     $repairOrdersList = getRepairOrdersList($repairOrdes);
     include 'view/home.php';
     break;
-case 'search-view':
-    include 'view/orders_search.php';
 break;
-case 'search-by-book':
-    $bookName = filter_input(INPUT_POST, 'bookName', FILTER_SANITIZE_STRING);
-    $scriptures = getScripturesByBook($bookName);
-    $message = "Search Results:";
-    $showButton = true;
-    if (empty($scriptures)){
-        $message = "Nothing found...";
-    }
-    $scripturesList = scripturesGrid($scriptures);
-    include 'view/home.php';
-break;
-case 'view-scripture':
-    $scriptureId = filter_input(INPUT_GET, 'scripture-id', FILTER_SANITIZE_STRING);
-    $scripture = getScriptureById($scriptureId);
-    $message = "Scripture Details:";
-    $showButton = true;
-    if (empty($scripture)){
-        $message = "Nothing found...";
-    }
-    $scripturesList = scriptureDetails($scripture);
+case 'customersList':
+    $customers = getCustomers();
+    $customersList = getCustomersList($customers);
     include 'view/home.php';
 break;
 default:

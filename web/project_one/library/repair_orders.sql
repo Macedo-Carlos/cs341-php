@@ -58,4 +58,6 @@ INSERT INTO customers(customername, customerlastname, customerphone, customeradd
 VALUES ('David', 'Bailey', '801-577-9846', '1446 S 7800 S, West Jordan, UT 84081');
 
 /* Search for full name 
-SELECT * FROM (SELECT id, customername, customerlastname, customername || ' ' || customerlastname AS full_name FROM customers) t WHERE full_name ILIKE '%Mich%'; */
+SELECT * FROM (SELECT id, customername, customerlastname, customername || ' ' || customerlastname AS full_name FROM customers) t WHERE full_name ILIKE '%Mich%';
+
+SELECT id, customername, customerlastname, customerphone, customeraddress, customername || ' ' || customerlastname AS full_name FROM customers;*/
