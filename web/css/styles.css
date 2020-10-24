@@ -43,6 +43,7 @@ main {
     margin-bottom: 20px;
     display: grid;
     grid-template-columns: 1.25fr 1.75fr;
+    grid-gap: 20px;
 }
 
 main h2 {

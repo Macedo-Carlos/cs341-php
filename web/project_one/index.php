@@ -2,7 +2,7 @@
 session_start();
 require_once 'library/connections.php';
 require_once 'library/functions.php';
-require_once 'model/notes-model.php';
+require_once 'model/orders_model.php';
 
 $message = "";
 $showButton = false;
@@ -22,7 +22,7 @@ case 'home':
     include 'view/home.php';
     break;
 case 'search-view':
-    include 'view/book_search.php';
+    include 'view/orders_search.php';
 break;
 case 'search-by-book':
     $bookName = filter_input(INPUT_POST, 'bookName', FILTER_SANITIZE_STRING);
