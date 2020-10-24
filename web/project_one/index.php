@@ -27,7 +27,7 @@ case 'customersList':
   include 'view/customers_list.php';
 break;
 case 'newCustomer':
-  include 'view/new_cutomer.php';
+  include 'view/new_customer.php';
 break;
 case 'addNewCustomer':
   // Filter and store the data
