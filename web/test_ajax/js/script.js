@@ -5,10 +5,8 @@ function searchCustomer(){
         headers: {
             'Content-type': 'application/json'
         },
-        body: JSON.stringify({
-            customerName: customerName
+        body: new URLSearchParams('customerName=' + customerName)
         })
-    })
     .then(res => {
         return res.text();
     })
