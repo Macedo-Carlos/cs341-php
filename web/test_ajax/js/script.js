@@ -1,7 +1,6 @@
 function searchCustomer(){
     let customerName = document.getElementById('customerName').value;
-    let url = window.location.hostname + '/customer.php';
-    fetch(url, {
+    fetch('customer.php', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
