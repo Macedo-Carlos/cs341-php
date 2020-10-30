@@ -3,7 +3,7 @@ document.getElementById('customerSearch').addEventListener('submit', searchCusto
 function searchCustomer(e){
     e.preventDefault();
     let customerName = document.getElementById('customerSearchBox').value;
-    fetch('index.php', {
+    fetch('customer_search.php', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
