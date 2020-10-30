@@ -1,19 +1,17 @@
 function searchCustomer(){
     let customerName = document.getElementById('customerName').value;
-    fetch('customer.php', {
+    fetch('https://reqres.in/api/users', {
         method: 'POST',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
             'Content-type': 'application/json'
         },
-        body: JSON.stringify({'customerName':customerName})
+        body: JSON.stringify({
+            customerName: customerName
+        })
     })
-    .then(response => {
-        return response.text();
+    .then(res => {
+        return res.text();
     })
-    .then(data =>{
-        console.log(data);
-        document.getElementById('outputDiv').innerHTML = data;
-    })
-    .catch(error => console.log(error));
+    .then(data => console.log(data))
+    .catch(err => console.log('Network Error'));
 }
