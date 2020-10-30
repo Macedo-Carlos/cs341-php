@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/site/repair_orers_logo.svg" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
     <title>Customers | Repair Orders Manager</title>
 </head>
 <body>
@@ -16,7 +17,14 @@
         <h1><?php echo $message; ?></h1>
         <h1>Customers</h1>
         <p>This is a list of our customers.</p>
-        <?php echo $customersList; $message = "";?>
+        <form id="customerSearch">
+            <div>
+                <label for="customerSearchBox">Enter customer's name</label>
+                <input type="text" name="customerSearchBox" id="customerSearchBox" placeholder="Search by customer's name">
+                <button class="formButton" type="submit">Search</button>
+            </div>
+        </form>
+        <div id="customersListContainer"><?php echo $customersList; $message = "";?></div>
         <a class="formButton" href="index.php?action=newCustomer">Add New Customer</a>
     </main>
 

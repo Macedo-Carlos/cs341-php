@@ -37,7 +37,7 @@
             <button class="formButton" type="submit">Add New Customer</button>
             <input type="hidden" name="action" value="addNewCustomer">
         </form>
-        <a class="formButton" href="index.php?customerList">Go Back</a>
+        <a class="formButton" href="index.php?action=customersList">Go Back</a>
     </main>
 
 </body>

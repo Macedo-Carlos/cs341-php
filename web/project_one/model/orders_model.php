@@ -58,7 +58,23 @@ function addNewCustomer($customername, $customerlastname, $customerphone, $custo
     return $rowsChanged;
 }
 
-
+// Retrieve information from all the customers
+function searchByCustomerName($customerName){
+    // Create a connection object using the heroku connection function
+    $db = herokuConnect();
+    // The SQL statement
+    $sql = "SELECT * FROM (SELECT id, customername, customerlastname, customername || ' ' || customerlastname AS full_name FROM customers) t WHERE full_name ILIKE '%$customerName%'";
+    // Create the prepared statement using the heroku connection
+    $stmt = $db->prepare($sql);
+    // Run the query
+    $stmt->execute();
+    // Retrieve the results of the query
+    $response = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $response;
+}
 
 
 function getScripturesByBook($bookName){
