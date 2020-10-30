@@ -10,7 +10,7 @@ function searchCustomer(){
     })
     .then(response => {
         console.log(response);
-        document.getElementById('outputDiv').innerHTML = response;
+        document.getElementById('outputDiv').innerHTML = response.text();
     })
     .catch(error => console.log(error));
 }
