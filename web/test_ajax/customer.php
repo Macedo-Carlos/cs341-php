@@ -4,6 +4,7 @@ session_start();
 $_SESSION['testvar1'] = $_POST['customerName'];
 
 $customerName = $_POST['customerName'];
-return $customerName;
+
+echo $customerName;
 
 ?>

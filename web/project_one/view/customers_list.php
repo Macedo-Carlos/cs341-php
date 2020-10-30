@@ -17,8 +17,8 @@
         <h1><?php echo $message; ?></h1>
         <h1>Customers</h1>
         <p>This is a list of our customers.</p>
-        <label for="customerSearchBox">Enter customer's name</label>
-        <input type="text" name="customerSearchBox" id="customerSearchBox" placeholder="Search by customer's name">
+        <label for="customerName">Enter customer's name</label>
+        <input type="text" name="customerName" id="customerName" placeholder="Search by customer's name">
         <button onclick="searchCustomer()">Search</button>
         <div id="customersListContainer"><?php echo $customersList; $message = "";?></div>
         <a class="formButton" href="index.php?action=newCustomer">Add New Customer</a>

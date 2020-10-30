@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'library/connections.php';
 require_once 'library/functions.php';
 require_once 'model/orders_model.php';
@@ -9,12 +8,10 @@ require_once 'model/orders_model.php';
   // Check for missing data
   if(empty($customername)){
     $message = "Please provide valid information for all empty form fields.";
-    include 'view/customers_list.php';
     exit; 
   }
   $customerSearch = searchByCustomerName($customerName);
   $customerList = getCustomersList($$customerSearch);
-  $_SESSION['testvar1'] = $customerList;
-  return $customerList;
+  echo $customerList;
 
 ?>
