@@ -9,6 +9,7 @@ function searchCustomer(){
         body: JSON.stringify({'action':'searchCustomer','customerName':customerName})
     })
     .then(response => {
+        console.log(response);
         document.getElementById('customersListContainer').innerHTML = response;
     })
     .catch(error => console.log(error));
