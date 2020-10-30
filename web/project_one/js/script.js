@@ -9,7 +9,7 @@ function searchCustomer(e){
             'Accept': 'application/json, text/plain, */*',
             'Content-type': 'application/json'
         },
-        body: JSON.stringify({action:'searchCustomer',customerName:customerName})
+        body: JSON.stringify({'action':'searchCustomer','customerName':customerName})
     })
     .then(response => {
         document.getElementById('customersListContainer').innerHTML = response;
