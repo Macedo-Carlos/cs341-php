@@ -1,6 +1,6 @@
 function searchCustomer(){
     let customerName = document.getElementById('customerName').value;
-    fetch('https://reqres.in/api/users', {
+    fetch('customer.php', {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
