@@ -8,9 +8,9 @@ function searchCustomer(){
         },
         body: JSON.stringify({'customerName':customerName})
     })
-    .then(response => {
-        console.log(response);
-        document.getElementById('outputDiv').innerHTML = response.json();
-    })
+    .then(response => response.text().then(data =>{
+        console.log(data);
+        document.getElementById('outputDiv').innerHTML = data;
+    }))
     .catch(error => console.log(error));
 }
