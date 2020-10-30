@@ -14,6 +14,7 @@ require_once 'model/orders_model.php';
   }
   $customerSearch = searchByCustomerName($customerName);
   $customerList = getCustomersList($$customerSearch);
+  $_SESSION['testvar1'] = $customerList;
   return $customerList;
 
 ?>
