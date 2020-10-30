@@ -1,6 +1,9 @@
 <?php
+session_start();
 
-$customerName = "<p>Carlos</p>";
+$_SESSION['testvar1'] = $_POST['customerName'];
+
+$customerName = $_POST['customerName'];
 return $customerName;
 
 ?>
