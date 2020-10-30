@@ -1,7 +1,4 @@
-document.getElementById('customerSearch').addEventListener('submit', searchCustomer());
-
-function searchCustomer(e){
-    e.preventDefault();
+function searchCustomer(){
     let customerName = document.getElementById('customerSearchBox').value;
     fetch('customer_search.php', {
         method: 'POST',

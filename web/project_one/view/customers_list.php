@@ -21,8 +21,8 @@
             <div>
                 <label for="customerSearchBox">Enter customer's name</label>
                 <input type="text" name="customerSearchBox" id="customerSearchBox" placeholder="Search by customer's name">
-                <input class="formButton" type="submit" value="Search">
             </div>
+                <button onclick="searchCustomer()">Search</button>
         </form>
         <div id="customersListContainer"><?php echo $customersList; $message = "";?></div>
         <a class="formButton" href="index.php?action=newCustomer">Add New Customer</a>
