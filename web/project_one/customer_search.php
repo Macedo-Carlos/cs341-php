@@ -11,7 +11,7 @@ require_once 'model/orders_model.php';
     exit; 
   }
   $customerSearch = searchByCustomerName($customerName);
-  $customerList = getCustomersList($$customerSearch);
+  $customerList = getCustomersList($customerSearch);
   echo $customerList;
 
 ?>
