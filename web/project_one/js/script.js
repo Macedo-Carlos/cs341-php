@@ -2,7 +2,7 @@ function searchCustomer(){
     let customerName = document.getElementById('customerName').value;
     console.log(customerName);
     console.log(new URLSearchParams('action=searchCustomer&customerName=' + customerName));
-    fetch('customer.php', {
+    fetch('index.php', {
         method: 'POST',
         body: new URLSearchParams('action=searchCustomer&customerName=' + customerName)
         })
