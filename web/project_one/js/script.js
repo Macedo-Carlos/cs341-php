@@ -1,17 +1,10 @@
 function searchCustomer(){
     let customerName = document.getElementById('customerName').value;
-    console.log(customerName);
-    console.log(new URLSearchParams('action=searchCustomer&customerName=' + customerName));
-    fetch('index.php', {
-        method: 'POST',
-        body: new URLSearchParams('action=searchCustomer&customerName=' + customerName)
-        })
-    .then(res => {
-        return res.text();
-    })
+    const url = "customer_search.php?customerName=" + customerName;
+    fetch(url)
+    .then(response => response.text())
     .then(data => {
-        console.log(data);
-        document.getElementById('outputDiv').innerHTML = data;
+        document.getElementById('outputDiv').innerHTML = data
     })
-    .catch(err => console.log('Network Error'));
+    .catch(err => console.log(err));
 }
