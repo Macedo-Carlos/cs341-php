@@ -1,9 +1,12 @@
 function searchCustomer(){
     let customerName = document.getElementById('customerName').value;
-    console.log(customerName);
+    let queryBody = "customerName=" + customerName;
     fetch('customer_search.php', {
         method: 'POST',
-        body: new URLSearchParams('customerName=' + customerName)
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: queryBody
         })
     .then(res => {
         return res.text();
