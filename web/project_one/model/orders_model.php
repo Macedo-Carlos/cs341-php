@@ -63,7 +63,7 @@ function searchByCustomerName($customerName){
     // Create a connection object using the heroku connection function
     $db = herokuConnect();
     // The SQL statement
-    $sql = "SELECT * FROM (SELECT id, customername, customerlastname, customername || ' ' || customerlastname AS full_name FROM customers) t WHERE full_name ILIKE '%$customerName%'";
+    $sql = "SELECT * FROM (SELECT id, customername, customerlastname,customerphone, customername || ' ' || customerlastname AS full_name FROM customers) t WHERE full_name ILIKE '%$customerName%'";
     // Create the prepared statement using the heroku connection
     $stmt = $db->prepare($sql);
     // Run the query
