@@ -1,7 +1,7 @@
 function searchCustomer(){
     let customerName = document.getElementById('customerName').value;
-    let queryBody = "customerName=" + customerName;
-    fetch('customer_search.php', {
+    let queryBody = "action=searchCustomer&customerName=" + customerName;
+    fetch('index.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
