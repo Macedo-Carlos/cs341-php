@@ -75,6 +75,9 @@ case 'searchCustomer':
   $customerList = getCustomersList($$customerSearch);
   return $customerList;
 break;
+case 'modelsList':
+  $models = getAllModels();
+break;
 default:
   $repairOrdes = getOpenOrders();
   $repairOrdersList = getRepairOrdersList($repairOrdes);

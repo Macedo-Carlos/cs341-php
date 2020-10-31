@@ -64,3 +64,13 @@ SELECT id, customername, customerlastname, customerphone, customeraddress, custo
 
 /* Delete record*/
 DELETE FROM customers WHERE id = 7;
+
+INSERT INTO models(modelname, modeldescription, modelimage)
+VALUES ('Fortrex', 'This motor has 112 lb of thrust, 48" shaft, foot pedal steer, auto pilot and bluetooth. This motor requires 36 V input (three battheries) and bow mount.', 'images/models/fortrex.jpg');
+
+INSERT INTO models(modelname, modeldescription, modelimage)
+VALUES ('Ulterra', 'This motor has 80 lb of thrust, 72" shaft, electric steer, self deploy, auto pilot and bluetooth. This motor requires 24 V input (three battheries and bow mount.', 'images/models/ulterra.jpg');
+
+UPDATE models SET modeldescription = 'This motor has 80 lb of thrust, 72" shaft, electric steer, self deploy, auto pilot and bluetooth. This motor requires 24 V input (two battheries) and bow mount.' WHERE id = 5;
+
+UPDATE models SET modeldescription = 'This motor has 112 lb of thrust, 48" shaft, foot pedal steer, auto pilot and bluetooth. This motor requires 36 V input (three battheries) and bow mount.' WHERE id = 4;
