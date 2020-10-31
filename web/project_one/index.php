@@ -66,9 +66,9 @@ case 'searchCustomer':
   // Filter and store the data
   $customerName = filter_input(INPUT_POST, 'customerName', FILTER_SANITIZE_STRING);
   // Check for missing data
-  if(empty($customername)){
+  if(empty($customerName)){
     $message = "Please provide valid information for all empty form fields.";
-    include 'view/customers_list.php';
+    echo ('There was an error');
     exit; 
   }
   $customerSearch = searchByCustomerName($customerName);
