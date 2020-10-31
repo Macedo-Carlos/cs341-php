@@ -76,7 +76,8 @@ case 'searchCustomer':
   return $customerList;
 break;
 case 'modelsList':
-  $models = getAllModels();
+  $modelsGrid = getAllModels();
+  include 'view/models_list.php';
 break;
 default:
   $repairOrdes = getOpenOrders();
