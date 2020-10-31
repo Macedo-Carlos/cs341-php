@@ -26,6 +26,6 @@ $customerList = getCustomersList($customerSearch);
   <title>Customer Search</title>
 </head>
 <body>
-  <div id="outputDiv">echo $customerList;</div>
+  <div id="outputDiv"><?php echo $customerList; ?></div>
 </body>
 </html>
