@@ -10,7 +10,7 @@ $customerName = $_GET['customerName'];
 // Check for missing data
 if(empty($customerName)){
   $message = "Please provide valid information for all empty form fields.";
-  echo 'Nothing here';
+  echo 'Nothing customer name';
   exit; 
 }
 

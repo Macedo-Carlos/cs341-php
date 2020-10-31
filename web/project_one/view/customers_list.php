@@ -17,7 +17,6 @@
         <h1><?php echo $message; ?></h1>
         <h1>Customers</h1>
         <p>This is a list of our customers.</p>
-        <div id="outputDiv"></div>
         <label for="customerName">Enter customer's name</label>
         <input type="text" name="customerName" id="customerName" placeholder="Search by customer's name">
         <button onclick="searchCustomer()">Search</button>

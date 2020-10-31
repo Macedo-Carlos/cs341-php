@@ -4,7 +4,7 @@ function searchCustomer(){
     fetch(url)
     .then(response => response.text())
     .then(data => {
-        document.getElementById('outputDiv').innerHTML = data
+        document.getElementById('customersListContainer').innerHTML = data
     })
     .catch(err => console.log(err));
 }
