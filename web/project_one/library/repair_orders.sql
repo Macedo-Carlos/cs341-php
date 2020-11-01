@@ -62,15 +62,35 @@ SELECT * FROM (SELECT id, customername, customerlastname,customerphone, customer
 
 SELECT id, customername, customerlastname, customerphone, customeraddress, customername || ' ' || customerlastname AS full_name FROM customers;*/
 
-/* Delete record*/
+/* Example of how to delete record*/
 DELETE FROM customers WHERE id = 7;
 
+/* Create Models */
 INSERT INTO models(modelname, modeldescription, modelimage)
 VALUES ('Fortrex', 'This motor has 112 lb of thrust, 48" shaft, foot pedal steer, auto pilot and bluetooth. This motor requires 36 V input (three battheries) and bow mount.', 'images/models/fortrex.jpg');
 
 INSERT INTO models(modelname, modeldescription, modelimage)
-VALUES ('Ulterra', 'This motor has 80 lb of thrust, 72" shaft, electric steer, self deploy, auto pilot and bluetooth. This motor requires 24 V input (three battheries and bow mount.', 'images/models/ulterra.jpg');
+VALUES ('Ulterra', 'This motor has 80 lb of thrust, 72" shaft, electric steer, self deploy, auto pilot and bluetooth. This motor requires 24 V input (two battheries) and bow mount.', 'images/models/ulterra.jpg');
+
+/* Make corrections */
 
 UPDATE models SET modeldescription = 'This motor has 80 lb of thrust, 72" shaft, electric steer, self deploy, auto pilot and bluetooth. This motor requires 24 V input (two battheries) and bow mount.' WHERE id = 5;
 
 UPDATE models SET modeldescription = 'This motor has 112 lb of thrust, 48" shaft, foot pedal steer, auto pilot and bluetooth. This motor requires 36 V input (three battheries) and bow mount.' WHERE id = 4;
+
+/* Create the services */
+
+INSERT INTO services(servicename, servicedescription, serviceprice)
+VALUES ('Water Damage Repair', 'Remove propeller, remove bottom housing front and rear cap, remove armature, dry all the parts and then test them, replace damaged parts, close the bottom assembly.', 125.00);
+
+INSERT INTO services(servicename, servicedescription, serviceprice)
+VALUES ('Steering Housing Replacement', 'Remove the control head, the motor/tube assembly, and the steering housing. Install a new steering housing. Then replace the motor tube assembly and the control head.', 180.00);
+
+INSERT INTO services(servicename, servicedescription, serviceprice)
+VALUES ('Armature Replacement', 'Remove propeller, remove bottom housing front and rear cap, remove armature, remove the brushes. Install the new brushes and armature. Then close the bottom assembly.', 125.00);
+
+INSERT INTO services(servicename, servicedescription, serviceprice)
+VALUES ('Main Control Board Replacement', 'Set the motor in deploy position. Remove the main control board cover. Disconnect the battery cable, steering housing, sonar, autopilot, and bottom housing cables. Remove the old main control board and install the new one. Connect the battery cable, steering housing, sonar, autopilot, and bottom housing cables to the new main control board. Then replace the main control board cover.', 145.00);
+
+INSERT INTO services(servicename, servicedescription, serviceprice)
+VALUES ('Control Head Replacement', 'Unscrew the bottom fasteners, and the retaining bolt. Disconnect the autopilot and bottom housing cables. Remove the control head and install the new one. Connect the autopilot and bottom housing cables. Replace the retaining bolt and bottom fasteners.', 45.00);
