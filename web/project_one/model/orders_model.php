@@ -128,4 +128,22 @@ function getAllServices(){
     return $response;
 }
 
+function addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus, $roType){
+    // Create a connection object using the db connection function
+    $db = herokuConnect();
+    // The SQL statement
+    $sql = "INSERT INTO repairorders(ronumber, rodate, customer_id, model_id, romodelsn, roproblem, rodiagnosisnotes, service_id, current_rostatus, current_rotype)
+    VALUES ('$roNumber', '$roDate', '$customerId', '$modelId', '$roModelSn', '$roProblem', '$roDiagnosisNotes', '$serviceId', '$roStatus', '$roType')";
+    // Create the prepared statement using the db connection
+    $stmt = $db->prepare($sql);
+    // Insert the data
+    $stmt->execute();
+    // Ask how many rows changed as a result of our insert
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
+}
+
 ?>

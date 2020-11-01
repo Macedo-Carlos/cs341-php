@@ -21,29 +21,29 @@
         <form action="index.php?addNewRo" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="roNumber">Repair Order Number</label>
-                <input type="text" name="roNumber" id="roNumber">
+                <input type="number" name="roNumber" id="roNumber" required>
             </div>
             <div>
                 <label for="roDate">Order Date</label>
-                <input type="date" name="roDate" id="roDate">
+                <input type="date" name="roDate" id="roDate" required>
             </div>
             <div>
-                <label for="roModel">Select the model for repair</label>
-                <select name="roModel" id="roModel">
+                <label for="modelId">Select the model for repair</label>
+                <select name="modelId" id="modelId" required>
                     <?php echo $modelOptions; ?>
                 </select>
             </div>
             <div>
-                <label for="motorSn">Motor Serial Number</label>
-                <input type="text" name="motorSn" id="motorSn">
+                <label for="roModelSn">Motor Serial Number</label>
+                <input type="text" name="roModelSn" id="roModelSn" required>
             </div>
             <div>
-                <label for="roProblem">Decribe the problem:</label>
-                <textarea name="roProblem" id="roProblem" cols="30" rows="20"></textarea>
+                <label for="roProblem">Describe the problem:</label>
+                <textarea name="roProblem" id="roProblem" cols="30" rows="20" required></textarea>
             </div>
             <div>
-                <label for="roDiagnosis">Diagnosis and Notes</label>
-                <textarea name="roDiagnosis" id="roDiagnosis" cols="30" rows="20"></textarea>
+                <label for="roDiagnosisNotes">Diagnosis and Notes</label>
+                <textarea name="roDiagnosisNotes" id="roDiagnosisNotes" cols="30" rows="20"></textarea>
             </div>
             <div>
                 <label for="serviceId">Select the service to be performed:</label>
@@ -51,13 +51,12 @@
                     <?php echo $serviceOptions; ?>
                 </select>
             </div>
-            <input type="hidden" name="status" value="1">
-            <input type="hidden" name="type" value="1">
+            <input type="hidden" name="roStatus" value="1">
+            <input type="hidden" name="roType" value="1">
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
-            <?php if ($showButton){ echo "<a href='index.php?action=home' class='formButton'>Go Back</a>"; } ?>
             <input class="formButton" type="submit" value="Create New Repair Order">
         </form>
-        <a href="index.php?action=customersList">Go Back</a>
+        <a class="formButton" href="index.php?action=customersList">Go Back</a>
     </main>
 </body>
 </html>

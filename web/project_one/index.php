@@ -95,6 +95,25 @@ case 'newRo':
   $serviceOptions = getServiceOptions($services);
   include 'view/new_ro.php';
 break;
+case 'addNewRo':
+  $roNumber = filter_input(INPUT_POST, 'roNumber', FILTER_SANITIZE_NUMBER_INT);
+  $roDate = filter_input(INPUT_POST, 'roDate', FILTER_SANITIZE_STRING);
+  $customerId = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
+  $modelId = filter_input(INPUT_POST, 'modelId', FILTER_SANITIZE_NUMBER_INT);
+  $roModelSn = filter_input(INPUT_POST, 'roModelSn', FILTER_SANITIZE_STRING);
+  $roProblem = filter_input(INPUT_POST, 'roProblem', FILTER_SANITIZE_STRING);
+  $roDiagnosisNotes = filter_input(INPUT_POST, 'roDiagnosisNotes', FILTER_SANITIZE_STRING);
+  $serviceId = filter_input(INPUT_POST, 'serviceId', FILTER_SANITIZE_NUMBER_INT);
+  $roStatus = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
+  $roType = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
+  $addNewOrderResult = addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus, $roType);
+  if($addNewOrderResult){
+    $message = "Repair order" . $roNumber . "has been added succefully";
+  } else {
+    $message = "There was a problem, please try again";
+  }
+  include 'view/home.php';
+break;
 default:
   $repairOrdes = getOpenOrders();
   $repairOrdersList = getRepairOrdersList($repairOrdes);
