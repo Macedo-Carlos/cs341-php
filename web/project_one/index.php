@@ -107,7 +107,7 @@ case 'addNewRo':
   $roStatus = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
   $roType = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
   echo $roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus, $roType;
-  exit;
+  exit();
   $addNewOrderResult = addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus, $roType);
   
   if($addNewOrderResult == 1){
