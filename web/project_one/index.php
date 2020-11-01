@@ -93,6 +93,7 @@ case 'newRo':
   $modelOptions = getModelOptions($models);
   $services = getAllServices();
   $serviceOptions = getServiceOptions($services);
+  include 'view/new_ro.php';
 break;
 default:
   $repairOrdes = getOpenOrders();

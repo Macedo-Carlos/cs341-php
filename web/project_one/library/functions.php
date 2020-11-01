@@ -15,7 +15,7 @@ function getCustomersList($customers){
     $block = "<table class='lists-table'>
                 <tr><th>Customer Name</th><th>Customer Phone</th><th></th></tr>";
     foreach ($customers as $customer) {
-        $block .= "<tr><td>$customer[full_name]</td><td>$customer[customerphone]</td><td>$customer[id]</td></tr>";
+        $block .= "<tr><td>$customer[full_name]</td><td>$customer[customerphone]</td><td><a href='index.php?action=newRo&customerId=$customer[id]'>New Repair Order</a></td></tr>";
     }
     $block .= '</table>';
     return $block; 
