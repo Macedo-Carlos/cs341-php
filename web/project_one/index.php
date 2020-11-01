@@ -76,7 +76,8 @@ case 'searchCustomer':
   return $customerList;
 break;
 case 'modelsList':
-  $modelsGrid = getAllModels();
+  $models = getAllModels();
+  $modelsGrid = getModelsGrid($models);
   include 'view/models_list.php';
 break;
 default:

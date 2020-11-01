@@ -29,7 +29,7 @@
             <ul>
                 <li><a href="index.php?action=customersList">Customers</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="#">Models</a></li>
+                <li><a href="index.php?action=modelsList">Models</a></li>
             </ul>
         </nav>
     </section>
