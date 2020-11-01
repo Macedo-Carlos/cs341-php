@@ -71,12 +71,15 @@ function getServicesList($services){
 }
 
 function getCustomerInfo($customer){
-    $block = "<div class='customerInfo'>
-            <h3>$customer[full_name]<h3>
-            <p>Phone: $customer[customerphone]</p>
-            <p>Address: $customer[customeraddress]</p>
-            </div>
-    ";
+    $block = "";
+    foreach($customer as $data){
+        $block = "<div class='customerInfo'>
+                <h3>$data[full_name]<h3>
+                <p>Phone: $data[customerphone]</p>
+                <p>Address: $data[customeraddress]</p>
+                </div>
+        ";
+    }
     return $block;
 }
 

@@ -89,7 +89,6 @@ case 'newRo':
   $customerId = filter_input(INPUT_GET, 'customerId', FILTER_SANITIZE_STRING);
   $customer = searchByCustomerId($customerId);
   $customerInfo = getCustomerInfo($customer);
-  var_dump($customerInfo);
   $models = getAllModels();
   $modelOptions = getModelOptions($models);
   $services = getAllServices();
