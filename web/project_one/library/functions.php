@@ -43,13 +43,13 @@ function getStatusDescription($statusEnum){
 function getModelsGrid($models){
     $block = '<div class=gridContainer>';
     foreach($models as $model){
-        $block .= `
+        $block .= "
         <div class=gridItem>
             <h3>$model[modelname]</h3>
-            <img src="$model[modelimage]" alt="$model[modelname]">
+            <img src='$model[modelimage]' alt='$model[modelname]'>
             <p>$model[modeldescription]</p>
         </div>
-        `;
+        ";
     }
     $block .= '</div>';
     return $block;
