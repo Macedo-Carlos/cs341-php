@@ -86,13 +86,13 @@ case 'servicesList':
   include 'view/services_list.php';
 break;
 case 'newRo':
-  $customerId = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
+  /* $customerId = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
   $customer = searchByCustomerId($customerId);
   $customerInfo = getCustomerInfo($customer);
   $models = getAllModels();
   $modelOptions = getModelOptions($models);
   $services = getAllServices();
-  $serviceOptions = getServiceOptions($services);
+  $serviceOptions = getServiceOptions($services); */
   include 'view/new_ro.php';
 break;
 default:
