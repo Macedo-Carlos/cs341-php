@@ -52,6 +52,7 @@ function getModelsGrid($models){
         `;
     }
     $block .= '</div>';
+    return $block;
 }
 
 ?>
