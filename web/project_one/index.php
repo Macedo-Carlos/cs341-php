@@ -107,7 +107,8 @@ case 'addNewRo':
   $roStatus = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
   $roType = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
   $addNewOrderResult = addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus, $roType);
-  if($addNewOrderResult){
+  echo $addNewOrderResult;
+  if($addNewOrderResult == 1){
     $message = "Repair order" . $roNumber . "has been added succefully";
   } else {
     $message = "There was a problem, please try again";
