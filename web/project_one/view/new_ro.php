@@ -18,7 +18,7 @@
         <div id="customerInfo">
         <?php echo $customerInfo; $message = "";?>
         </div>
-        <form action="index.php?addNewRo" method="POST" enctype="multipart/form-data">
+        <form action="index.php" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="roNumber">Repair Order Number</label>
                 <input type="number" name="roNumber" id="roNumber" required>
@@ -54,6 +54,7 @@
             <input type="hidden" name="roStatus" value="1">
             <input type="hidden" name="roType" value="1">
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
+            <input type="hidden" name="action" value="addNewRo">
             <input class="formButton" type="submit" value="Create New Repair Order">
         </form>
         <a class="formButton" href="index.php?action=customersList">Go Back</a>
