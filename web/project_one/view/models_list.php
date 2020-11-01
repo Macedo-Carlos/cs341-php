@@ -24,7 +24,7 @@
             <ul>
                 <li><a href="index.php?action=home">Open Repairs</a></li>
                 <li><a href="index.php?action=customersList">Customers</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="index.php?action=servicesList">Services</a></li>
             </ul>
         </nav>
     </section>

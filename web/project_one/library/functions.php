@@ -55,6 +55,21 @@ function getModelsGrid($models){
     return $block;
 }
 
+function getServicesList($services){
+    $block = '<div class=services-container>';
+    foreach($services as $service){
+        $block .= "
+        <div class=service-item>
+            <h3>$service[servicename]</h3>
+            <p>$service[servicedescription]</p>
+            <p>$$service[serviceprice]</p>
+        </div>
+        ";
+    }
+    $block .= '</div>';
+    return $block;
+}
+
 ?>
 
 

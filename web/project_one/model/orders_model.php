@@ -93,4 +93,21 @@ function getAllModels(){
     return $response;
 }
 
+function getAllServices(){
+    // Create a connection object using the heroku connection function
+    $db = herokuConnect();
+    // The SQL statement
+    $sql = "SELECT * FROM services";
+    // Create the prepared statement using the heroku connection
+    $stmt = $db->prepare($sql);
+    // Query the data
+    $stmt->execute();
+    // Get the results
+    $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $response;
+}
+
 ?>

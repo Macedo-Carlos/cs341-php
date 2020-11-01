@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/site/repair_orers_logo.svg" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Open Orders | Repair Orders Manager</title>
+    <title>Services | Repair Orders Manager</title>
 </head>
 <body>
     <header>
@@ -14,22 +14,17 @@
     </header>
     <main>
         <h1><?php echo $message; ?></h1>
-        <h1>View Open Repair Orders</h1>
-        <p>This is a list of the repair orders that we have to work on.</p>
-        <?php echo $repairOrdersList; $message = "";?>
-        <form action="index.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="action" value="search-view">
-            <?php if ($showButton){ echo "<a href='index.php?action=home' class='formButton'>Go Back</a>"; } ?>
-            <button class="formButton" type="submit">Search Orders</button>
-        </form>
+        <h1>View Services</h1>
+        <p>This is a list of the repair services we offer.</p>
+        <?php echo $servicesList; $message = "";?>
     </main>
     
     <section class="side">
         <nav>
             <ul>
+                <li><a href="index.php?action=home">Open Repairs</a></li>
                 <li><a href="index.php?action=customersList">Customers</a></li>
-                <li><a href="index.php?action=servicesList">Services</a></li>
-                <li><a href="index.php?action=modelsList">Models</a></li>
+                <li><a href="modelsList">Models</a></li>
             </ul>
         </nav>
     </section>

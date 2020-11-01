@@ -80,6 +80,11 @@ case 'modelsList':
   $modelsGrid = getModelsGrid($models);
   include 'view/models_list.php';
 break;
+case 'servicesList':
+  $services = getAllServices();
+  $servicesList = getServicesList($services);
+  include 'view/services_list.php';
+break;
 default:
   $repairOrdes = getOpenOrders();
   $repairOrdersList = getRepairOrdersList($repairOrdes);
