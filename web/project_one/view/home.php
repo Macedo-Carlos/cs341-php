@@ -17,11 +17,6 @@
         <h1>View Open Repair Orders</h1>
         <p>This is a list of the repair orders that we have to work on.</p>
         <?php echo $repairOrdersList; $message = "";?>
-        <form action="index.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="action" value="search-view">
-            <?php if ($showButton){ echo "<a href='index.php?action=home' class='formButton'>Go Back</a>"; } ?>
-            <button class="formButton" type="submit">Search Orders</button>
-        </form>
     </main>
     
     <section class="side">

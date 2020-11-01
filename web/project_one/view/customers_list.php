@@ -28,8 +28,8 @@
         <nav>
             <ul>
                 <li><a href="index.php?action=home">Open Orders</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Models</a></li>
+                <li><a href="index.php?action=servicesList">Services</a></li>
+                <li><a href="index.php?action=modelsList">Models</a></li>
             </ul>
         </nav>
     </section>

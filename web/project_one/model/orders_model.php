@@ -76,6 +76,24 @@ function searchByCustomerName($customerName){
     return $response;
 }
 
+// Retrieve information from all the customers
+function searchByCustomerId($customerId){
+    // Create a connection object using the heroku connection function
+    $db = herokuConnect();
+    // The SQL statement
+    $sql = "SELECT * FROM (SELECT id, customername, customerlastname,customerphone, customeraddress, customername || ' ' || customerlastname AS full_name FROM customers) t WHERE id = $customerId";
+    // Create the prepared statement using the heroku connection
+    $stmt = $db->prepare($sql);
+    // Run the query
+    $stmt->execute();
+    // Retrieve the results of the query
+    $response = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $response;
+}
+
 function getAllModels(){
     // Create a connection object using the heroku connection function
     $db = herokuConnect();

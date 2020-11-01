@@ -70,6 +70,32 @@ function getServicesList($services){
     return $block;
 }
 
+function getCustomerInfo($customer){
+    $block = "<div class='customerInfo'>
+            <h3>$customer[full_name]<h3>
+            <p>Phone: $customer[customerphone]</p>
+            <p>Address: $customer[customeraddress]</p>
+            </div>
+    ";
+    return $block;
+}
+
+function getModelOptions($models){
+    $block = "";
+    foreach($models as $model){
+        $block .= "<option value=$model[id]>$model[modelname]</option>";
+    }
+    return $block;
+}
+
+function getServiceOptions($services){
+    $block = "";
+    foreach($services as $service){
+        $block .= "<option value=$service[id]>$service[servicename]</option>";
+    }
+    return $block;
+}
+
 ?>
 
 
