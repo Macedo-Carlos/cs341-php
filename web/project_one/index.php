@@ -115,7 +115,6 @@ case 'addNewRo':
   } else {
     $message = "There was a problem, please try again";
   }
-  include 'view/home.php';
 break;
 default:
   $repairOrdes = getOpenOrders();
