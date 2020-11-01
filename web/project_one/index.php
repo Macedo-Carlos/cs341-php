@@ -91,8 +91,6 @@ case 'newRo':
   $customerInfo = getCustomerInfo($customer);
   $models = getAllModels();
   $modelOptions = getModelOptions($models);
-  $services = getAllServices();
-  $serviceOptions = getServiceOptions($services);
   include 'view/new_ro.php';
 break;
 case 'addNewRo':
@@ -102,13 +100,10 @@ case 'addNewRo':
   $modelId = filter_input(INPUT_POST, 'modelId', FILTER_SANITIZE_NUMBER_INT);
   $roModelSn = filter_input(INPUT_POST, 'roModelSn', FILTER_SANITIZE_STRING);
   $roProblem = filter_input(INPUT_POST, 'roProblem', FILTER_SANITIZE_STRING);
-  $roDiagnosisNotes = filter_input(INPUT_POST, 'roDiagnosisNotes', FILTER_SANITIZE_STRING);
-  $serviceId = filter_input(INPUT_POST, 'serviceId', FILTER_SANITIZE_NUMBER_INT);
   $roStatus = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
-  $roType = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
-  echo $roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus, $roType;
+  echo $roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roStatus;
   exit();
-  $addNewOrderResult = addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus, $roType);
+  $addNewOrderResult = addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roStatus);
   
   if($addNewOrderResult == 1){
     $message = "Repair order" . $roNumber . "has been added succefully";

@@ -41,18 +41,7 @@
                 <label for="roProblem">Describe the problem:</label>
                 <textarea name="roProblem" id="roProblem" cols="30" rows="20" required></textarea>
             </div>
-            <div>
-                <label for="roDiagnosisNotes">Diagnosis and Notes</label>
-                <textarea name="roDiagnosisNotes" id="roDiagnosisNotes" cols="30" rows="20"></textarea>
-            </div>
-            <div>
-                <label for="serviceId">Select the service to be performed:</label>
-                <select name="serviceId" id="serviceId">
-                    <?php echo $serviceOptions; ?>
-                </select>
-            </div>
             <input type="hidden" name="roStatus" value="1">
-            <input type="hidden" name="roType" value="1">
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
             <input type="hidden" name="action" value="addNewRo">
             <input class="formButton" type="submit" value="Create New Repair Order">
