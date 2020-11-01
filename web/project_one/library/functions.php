@@ -74,7 +74,7 @@ function getCustomerInfo($customer){
     $block = "";
     foreach($customer as $data){
         $block = "<div class='customerInfo'>
-                <h3>$data[full_name]<h3>
+                <p>For customer: $data[full_name]</p>
                 <p>Phone: $data[customerphone]</p>
                 <p>Address: $data[customeraddress]</p>
                 </div>

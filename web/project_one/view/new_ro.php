@@ -57,6 +57,7 @@
             <?php if ($showButton){ echo "<a href='index.php?action=home' class='formButton'>Go Back</a>"; } ?>
             <input class="formButton" type="submit" value="Create New Repair Order">
         </form>
+        <a href="index.php?action=customersList">Go Back</a>
     </main>
 </body>
 </html>
