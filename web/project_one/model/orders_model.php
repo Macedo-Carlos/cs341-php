@@ -17,7 +17,6 @@ function getOpenOrders(){
     $stmt->execute();
     // Retrieve the results of the query
     $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    print_r($response);
     // Close the database interaction
     $stmt->closeCursor();
     // Return the indication of success (rows changed)

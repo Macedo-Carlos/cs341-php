@@ -3,7 +3,6 @@
 // Build the HTML for the scriptures list
 function getRepairOrdersList($repairOrders){
     $block = "<table class='lists-table'><tr><th>RO Number</th><th>Order Date</th><th>Customer</th><th>Order Status</th></tr>";
-    print_r($repairOrders);
     foreach ($repairOrders as $order) {
         $currentStatus = getStatusDescription($order['rostatus']);
         $orderId = $order['id'];
