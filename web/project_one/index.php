@@ -114,6 +114,8 @@ break;
 case 'viewRepairOrder':
   $repairOrderId = filter_input(INPUT_GET, 'repairOrderId', FILTER_SANITIZE_NUMBER_INT);
   $repairOrder = getRoInfoById($repairOrderId);
+  print_r($repairOrder);
+  exit();
   $roNumber = $repairOrder[0]['ronumber'];
   $roDate = filter_input(INPUT_POST, 'roDate', FILTER_SANITIZE_STRING);
   $customerId = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);

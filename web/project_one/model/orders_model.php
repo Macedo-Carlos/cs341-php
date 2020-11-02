@@ -146,4 +146,21 @@ function addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProb
     return $rowsChanged;
 }
 
+function getRoInfoById($repairOrderId){
+    // Create a connection object using the heroku connection function
+    $db = herokuConnect();
+    // The SQL statement
+    $sql = "SELECT * FROM repairorders, customers WHERE repairorders.customer_id = customers.id AND repairorders.id = '$repairOrderId'";
+    // Create the prepared statement using the heroku connection
+    $stmt = $db->prepare($sql);
+    // Run the query
+    $stmt->execute();
+    // Retrieve the results of the query
+    $response = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $response;
+}
+
 ?>
