@@ -125,6 +125,7 @@ break;
 default:
   $repairOrders = getOpenOrders();
   print_r($repairOrders);
+  exit();
   $repairOrdersList = getRepairOrdersList($repairOrders);
   include 'view/home.php';
 break;
