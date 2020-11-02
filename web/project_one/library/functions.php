@@ -5,6 +5,7 @@ function getRepairOrdersList($repairOrders){
     $block = "<table class='lists-table'><tr><th>RO Number</th><th>Order Date</th><th>Customer</th><th>Order Status</th></tr>";
     foreach ($repairOrders as $order) {
         $currentStatus = getStatusDescription($order['rostatus']);
+        print_r($order);
         $orderId = $order['id'];
         $block .= "<tr onclick=window.location='index.php?action=viewRepairOrder&repairOrderId=$orderId';><td>$order[ronumber]</td><td>$order[rodate]</td><td>$order[customername] $order[customerlastname]</td><td>$currentStatus</td></tr>";
     }
