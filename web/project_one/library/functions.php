@@ -4,9 +4,9 @@
 function getRepairOrdersList($repairOrders){
     $block = "<table class='lists-table'><tr><th>RO Number</th><th>Order Date</th><th>Customer</th><th>Order Status</th></tr>";
     foreach ($repairOrders as $order) {
-        echo $order['id'];
         $currentStatus = getStatusDescription($order['rostatus']);
-        $block .= "<tr onclick=window.location=index.php?action=viewRepairOrder&repairOrderId=$order[id];><td>$order[ronumber]</td><td>$order[rodate]</td><td>$order[customername] $order[customerlastname]</td><td>$currentStatus</td></tr>";
+        $orderId = $order['id'];
+        $block .= "<tr onclick=window.location='index.php?action=viewRepairOrder&repairOrderId=$orderId';><td>$order[ronumber]</td><td>$order[rodate]</td><td>$order[customername] $order[customerlastname]</td><td>$currentStatus</td></tr>";
     }
     $block .= '</table>';
     return $block;
