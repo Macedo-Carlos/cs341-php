@@ -103,11 +103,24 @@ case 'addNewRo':
   $roStatus = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
   $addNewOrderResult = addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roStatus);
   if($addNewOrderResult == 1){
-    $message = "Repair order" . $roNumber . "has been added succefully";
+    $message = "Repair order " . $roNumber . " has been added succefully";
   } else {
     $message = "There was a problem, please try again";
   }
+  $repairOrdes = getOpenOrders();
+  $repairOrdersList = getRepairOrdersList($repairOrdes);
   include 'view/home.php';
+break;
+case 'viewRepairOrder':
+  $repairOrderId = filter_input(INPUT_GET, 'repairOrderId', FILTER_SANITIZE_NUMBER_INT);
+  $repairOrder = getRoInfoById($repairOrderId);
+  $roNumber = $repairOrder[0]['ronumber'];
+  $roDate = filter_input(INPUT_POST, 'roDate', FILTER_SANITIZE_STRING);
+  $customerId = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
+  $modelId = filter_input(INPUT_POST, 'modelId', FILTER_SANITIZE_NUMBER_INT);
+  $roModelSn = filter_input(INPUT_POST, 'roModelSn', FILTER_SANITIZE_STRING);
+  $roProblem = filter_input(INPUT_POST, 'roProblem', FILTER_SANITIZE_STRING);
+  $roStatus = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
 break;
 default:
   $repairOrdes = getOpenOrders();
