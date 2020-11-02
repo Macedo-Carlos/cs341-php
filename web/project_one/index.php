@@ -123,8 +123,9 @@ case 'viewRepairOrder':
   $roStatus = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
 break;
 default:
-  $repairOrdes = getOpenOrders();
-  $repairOrdersList = getRepairOrdersList($repairOrdes);
+  $repairOrders = getOpenOrders();
+  print_r($repairOrders);
+  $repairOrdersList = getRepairOrdersList($repairOrders);
   include 'view/home.php';
 break;
 }
