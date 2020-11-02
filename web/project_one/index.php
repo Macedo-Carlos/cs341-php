@@ -100,8 +100,7 @@ case 'addNewRo':
   $modelId = filter_input(INPUT_POST, 'modelId', FILTER_SANITIZE_NUMBER_INT);
   $roModelSn = filter_input(INPUT_POST, 'roModelSn', FILTER_SANITIZE_STRING);
   $roProblem = filter_input(INPUT_POST, 'roProblem', FILTER_SANITIZE_STRING);
-  $roStatus = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
-  $addNewOrderResult = addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roStatus);
+  $addNewOrderResult = addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem);
   if($addNewOrderResult == 1){
     $message = "Repair order " . $roNumber . " has been added succefully";
   } else {
@@ -115,7 +114,6 @@ case 'viewRepairOrder':
   $repairOrderId = filter_input(INPUT_GET, 'repairOrderId', FILTER_SANITIZE_NUMBER_INT);
   $repairOrder = getRoInfoById($repairOrderId);
   print_r($repairOrder);
-  exit();
   $roNumber = $repairOrder[0]['ronumber'];
   $roDate = filter_input(INPUT_POST, 'roDate', FILTER_SANITIZE_STRING);
   $customerId = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);

@@ -128,12 +128,12 @@ function getAllServices(){
     return $response;
 }
 
-function addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roStatus){
+function addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem){
     // Create a connection object using the db connection function
     $db = herokuConnect();
     // The SQL statement
     $sql = "INSERT INTO repairorders(ronumber, rodate, customer_id, model_id, romodelsn, roproblem, current_rostatus)
-    VALUES ('$roNumber', '$roDate', '$customerId', '$modelId', '$roModelSn', '$roProblem', '$roStatus')";
+    VALUES ('$roNumber', '$roDate', '$customerId', '$modelId', '$roModelSn', '$roProblem', '1')";
     // Create the prepared statement using the db connection
     $stmt = $db->prepare($sql);
     // Insert the data
