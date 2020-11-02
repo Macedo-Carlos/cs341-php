@@ -18,8 +18,6 @@ $action = filter_input(INPUT_POST, 'action');
 switch ($action){
 case 'home':
   $repairOrders = getOpenOrders();
-  print_r($repairOrders);
-  exit();
   $repairOrdersList = getRepairOrdersList($repairOrders);
   include 'view/home.php';
 break;
