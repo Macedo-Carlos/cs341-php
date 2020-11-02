@@ -113,15 +113,19 @@ break;
 case 'viewRepairOrder':
   $repairOrderId = filter_input(INPUT_GET, 'repairOrderId', FILTER_SANITIZE_NUMBER_INT);
   $repairOrder = getRoInfoById($repairOrderId);
-  print_r($repairOrder);
   $roNumber = $repairOrder[0]['ronumber'];
-  echo $roNumber;
-  $roDate = filter_input(INPUT_POST, 'roDate', FILTER_SANITIZE_STRING);
-  $customerId = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
-  $modelId = filter_input(INPUT_POST, 'modelId', FILTER_SANITIZE_NUMBER_INT);
-  $roModelSn = filter_input(INPUT_POST, 'roModelSn', FILTER_SANITIZE_STRING);
-  $roProblem = filter_input(INPUT_POST, 'roProblem', FILTER_SANITIZE_STRING);
-  $roStatus = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
+  $roDate = $repairOrder[0]['rodate'];
+  $customerId = $repairOrder[0]['customer_id'];
+  $modelId = $repairOrder[0]['model_id'];
+  $roModelSn = $repairOrder[0]['romodelsn'];
+  $roProblem = $repairOrder[0]['roproblem'];
+  $roStatus = $repairOrder[0]['current_rostatus'];
+  $roType = $repairOrder[0]['current_rotype'];
+  $customerName = $repairOrder[0]['customername'];
+  $customerlastname = $repairOrder[0]['customerlastname'];
+  $customerphone = $repairOrder[0]['customerphone'];
+  $customerAddress = $repairOrder[0]['customeraddress'];
+  echo $roNumber, $roDate, $customerId, $modelId;
 break;
 default:
   $repairOrders = getOpenOrders();
