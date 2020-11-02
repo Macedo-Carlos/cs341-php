@@ -115,6 +115,7 @@ case 'viewRepairOrder':
   $repairOrder = getRoInfoById($repairOrderId);
   print_r($repairOrder);
   $roNumber = $repairOrder[0]['ronumber'];
+  echo $roNumber;
   $roDate = filter_input(INPUT_POST, 'roDate', FILTER_SANITIZE_STRING);
   $customerId = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
   $modelId = filter_input(INPUT_POST, 'modelId', FILTER_SANITIZE_NUMBER_INT);

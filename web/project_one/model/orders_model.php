@@ -151,7 +151,7 @@ function getRoInfoById($repairOrderId){
     // Create a connection object using the heroku connection function
     $db = herokuConnect();
     // The SQL statement
-    $sql = "SELECT * FROM repairorders, customers WHERE repairorders.customer_id = customers.id AND repairorders.id = '$repairOrderId'";
+    $sql = "SELECT r.id, r.ronumber, r.rodate, r.customer_id, r.model_id, r.roproblem, r.rodiagnosisnotes, r.service_id, r.current_rostatus, r.current_rotype, c.customername, c.customerlastname, c.customerphone, c.customeraddress FROM repairorders r INNER JOIN  customers c ON r.customer_id = c.id WHERE repairorders.id = '$repairOrderId'";
     // Create the prepared statement using the heroku connection
     $stmt = $db->prepare($sql);
     // Run the query
