@@ -51,6 +51,10 @@ main p {
   font-size: 1.25em;
 }
 
+main span {
+  font-size: 1.25em;
+}
+
 table {
   border-collapse: collapse;
   font-size: 1.25em;
