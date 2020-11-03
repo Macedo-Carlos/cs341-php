@@ -48,6 +48,7 @@ main {
   grid-area: main;
   padding: 0 20%;
   margin-left: 20px;
+  margin-bottom: 40px;
 }
 
 main p {
@@ -145,6 +146,17 @@ input {
   border: 1px solid grey;
 }
 
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+hr {
+  width: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -191,4 +203,18 @@ body {
   25%  {transform: translateY(250%);}
   50%  {transform: translateY(250%);}
   100%  {transform: translateY(0%);}
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.gridItem img {
+  width: 100%;
+}
+
+.gridItem h3 {
+  font-size: 2.5em;
 }
