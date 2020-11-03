@@ -92,6 +92,16 @@ function getModelOptions($models){
     return $block;
 }
 
+function getModelOptionsAndSelected($models, $selected){
+    $block = "";
+    foreach($models as $model){
+        $block .= "<option value=$model[id] ";
+        if($model['id'] == $selected){ $block .= "selected"; }
+        $block .= ">$model[modelname]</option>";
+    }
+    return $block;
+}
+
 function getServiceOptions($services){
     $block = "";
     foreach($services as $service){

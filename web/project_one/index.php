@@ -127,6 +127,8 @@ case 'viewRepairOrder':
   $customerAddress = $repairOrder[0]['customeraddress'];
   $customer = searchByCustomerId($customerId);
   $customerInfo = getCustomerInfo($customer);
+  $models = getAllModels();
+  $modelOptions = getModelOptionsAndSelected($models, $modelId);
   include 'view/view_ro.php';
 break;
 default:

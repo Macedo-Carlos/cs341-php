@@ -26,11 +26,12 @@
             </div>
             <div>
                 <label for="roDate">Order Date</label>
-                <input type="date" name="roDate" id="roDate" required>
+                <input type="date" name="roDate" id="roDate" required value=<?php echo $roDate; ?>>
             </div>
             <div>
                 <label for="modelId">Select the model for repair</label>
                 <select name="modelId" id="modelId" required>
+                    <option value="0"></option>
                     <?php echo $modelOptions; ?>
                 </select>
             </div>
