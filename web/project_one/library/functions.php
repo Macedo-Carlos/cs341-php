@@ -95,8 +95,8 @@ function getModelOptions($models){
 function getModelOptionsAndSelected($models, $selected){
     $block = "";
     foreach($models as $model){
-        $block .= "<option value=$model[id] ";
-        if($model['id'] == $selected){ $block .= "selected"; }
+        $block .= "<option value=$model[id]";
+        if($model['id'] == $selected){ $block .= " selected='selected'"; }
         $block .= ">$model[modelname]</option>";
     }
     return $block;
