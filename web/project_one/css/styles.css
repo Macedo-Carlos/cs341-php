@@ -194,14 +194,14 @@ body {
 
 .slide-down-up {
   animation-name: slideDownUp;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-iteration-count: 1;
 }
 
 @keyframes slideDownUp {
   0%   {transform: translateY(0);}
-  25%  {transform: translateY(250%);}
-  50%  {transform: translateY(250%);}
+  15%  {transform: translateY(250%);}
+  65%  {transform: translateY(250%);}
   100%  {transform: translateY(0%);}
 }
 

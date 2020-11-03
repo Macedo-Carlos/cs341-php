@@ -8,6 +8,7 @@
     <title>Models | Repair Orders Manager</title>
 </head>
 <body>
+    <div id="message-box" class=""><?php echo $message; ?></div>
     <header>
     <a href="index.php?action=home"><img src="images/site/repair_orders_logo.png" alt="Repair Orders Maganer Logo"></a>
         <a href="index.php?action=home"><h1>Repair Orders Manager</h1></a>

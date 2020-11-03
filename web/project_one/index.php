@@ -38,7 +38,7 @@ case 'addNewCustomer':
 
   // Check for missing data
   if(empty($customername) || empty($customerlastname) || empty($customerphone) || empty($customeraddress)){
-    $message = "Please provide valid information for all empty form fields.";
+    $message = "<span class='message-span slide-down-up'>Please provide valid information for all empty form fields</span>";
     include 'view/customers_list.php';
     exit; 
   }
@@ -56,7 +56,7 @@ case 'addNewCustomer':
     include 'view/customers_list.php';
     exit;
   } else {
-    $message = "$customername $customerlastname failed to be added to the customer's list. Please try again.";
+    $message = "<span class='message-span slide-down-up'>$customername $customerlastname failed to be added to the customer's list, please try again</span>";
     $_SESSION['message'] = $message;
     include 'view/customers_list.php';
     exit;
@@ -67,7 +67,7 @@ case 'searchCustomer':
   $customerName = filter_input(INPUT_POST, 'customerName', FILTER_SANITIZE_STRING);
   // Check for missing data
   if(empty($customerName)){
-    $message = "Please provide valid information for all empty form fields.";
+    $message = "<span class='message-span slide-down-up'>Please provide valid information for all empty form fields</span>";
     echo ('There was an error');
     exit; 
   }
@@ -102,9 +102,9 @@ case 'addNewRo':
   $roProblem = filter_input(INPUT_POST, 'roProblem', FILTER_SANITIZE_STRING);
   $addNewOrderResult = addNewRo($roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem);
   if($addNewOrderResult == 1){
-    $message = "Repair order " . $roNumber . " has been added succefully";
+    $message = "<span class='message-span slide-down-up'>Repair order " . $roNumber . " has been added succefully</span>";
   } else {
-    $message = "There was a problem, please try again";
+    $message = "<span class='message-span slide-down-up'>There was a problem, please try again</span>";
   }
   $repairOrdes = getOpenOrders();
   $repairOrdersList = getRepairOrdersList($repairOrdes);
