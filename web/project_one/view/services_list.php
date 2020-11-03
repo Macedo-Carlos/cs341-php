@@ -19,7 +19,7 @@
         <?php echo $servicesList; $message = "";?>
     </main>
     
-    <section class="side">
+    <section id="side-menu">
         <nav>
             <ul>
                 <li><a href="index.php?action=home">Open Repairs</a></li>

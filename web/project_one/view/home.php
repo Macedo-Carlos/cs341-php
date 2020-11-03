@@ -19,7 +19,7 @@
         <?php echo $repairOrdersList; $message = "";?>
     </main>
     
-    <section class="side">
+    <section id="side-menu">
         <nav>
             <ul>
                 <li><a href="index.php?action=customersList">Customers</a></li>

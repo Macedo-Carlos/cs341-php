@@ -24,7 +24,7 @@
         <a class="formButton" href="index.php?action=newCustomer">Add New Customer</a>
     </main>
 
-    <section class="side">
+    <section id="side-menu">
         <nav>
             <ul>
                 <li><a href="index.php?action=home">Open Orders</a></li>
