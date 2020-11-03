@@ -156,3 +156,39 @@ body {
     'footer footer';
   grid-template-columns: 1fr 4fr;
 }
+
+/* Styles for the messages */
+
+#message-box {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  height: 120px;
+  top: -120px;
+  width: 100%;
+  text-align: center;
+}
+
+.message-span {
+  position: absolute;
+  margin: 25px auto;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  padding: 15px 25px;
+  display: inline-block;
+  font-size: 1.5em;
+  border-radius: 5px;
+}
+
+.slide-down-up {
+  animation-name: slideDownUp;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes slideDownUp {
+  0%   {transform: translateY(0);}
+  25%  {transform: translateY(250%);}
+  50%  {transform: translateY(250%);}
+  100%  {transform: translateY(0%);}
+}
