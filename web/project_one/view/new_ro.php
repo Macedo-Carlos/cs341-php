@@ -40,7 +40,7 @@
             </div>
             <div>
                 <label for="roProblem">Describe the problem:</label>
-                <textarea name="roProblem" id="roProblem" cols="50" rows="10" required></textarea>
+                <textarea name="roProblem" id="roProblem" cols="75" rows="10" required></textarea>
             </div>
             <input type="hidden" name="roStatus" value="1">
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">

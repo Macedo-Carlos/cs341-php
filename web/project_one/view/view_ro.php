@@ -9,20 +9,20 @@
     <title>Open Orders | Repair Orders Manager</title>
 </head>
 <body>
-    <div id="message-box" class=""><?php echo $message; ?></div>
+    <div id="message-box" class=""><?php echo $roNumber; ?></div>
     <header>
     <a href="index.php?action=home"><img src="images/site/repair_orders_logo.png" alt="Repair Orders Maganer Logo"></a>
         <a href="index.php?action=home"><h1>Repair Orders Manager</h1></a>
     </header>
     <main>
-        <h1>Repair Order <?php echo $message; ?></h1>
+        <h1>Repair Order <?php echo $roNumber; ?></h1>
         <div id="customerInfo">
         <?php echo $customerInfo; $message = "";?>
         </div>
         <form action="index.php" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="roNumber">Repair Order Number</label>
-                <input type="number" name="roNumber" id="roNumber" required>
+                <input type="number" name="roNumber" id="roNumber" required value=<?php echo $roNumber; ?>>
             </div>
             <div>
                 <label for="roDate">Order Date</label>
@@ -40,11 +40,14 @@
             </div>
             <div>
                 <label for="roProblem">Describe the problem:</label>
-                <textarea name="roProblem" id="roProblem" cols="50" rows="10" required></textarea>
+                <textarea name="roProblem" id="roProblem" cols="75" rows="10" required></textarea>
             </div>
-            <input type="hidden" name="roStatus" value="1">
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
-            <input type="hidden" name="action" value="addNewRo">
+            <input type="hidden" name="roNumber" value="<?php echo $roNumber; ?>">
+            <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
+            <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
+            <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
+            <input type="hidden" name="action" value="updateRO">
             <input class="formButton" type="submit" value="Create New Repair Order">
         </form>
         <a class="formButton" href="index.php?action=customersList">Go Back</a>

@@ -233,7 +233,8 @@ form div {
   margin: 15px 0;
 }
 
-select {
+select, textarea {
+  font-family: 'Roboto', sans-serif;
   font-size: 1.25em;
   margin: 5px 10px;
   padding: 5px 10px;
