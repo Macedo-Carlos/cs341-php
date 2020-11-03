@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="23.03723"
+     inkscape:cx="-143.96277"
      inkscape:cy="122"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -64,7 +64,9 @@
      transform="translate(0,-522.51965)">
     <g
        id="g857"
-       transform="matrix(0.12788918,0,0,0.12788918,6.0277746e-6,978.96156)">
+       transform="matrix(0.12788918,0,0,0.12788918,6.0277746e-6,978.96156)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <rect
          transform="rotate(-15)"
          y="714.71252"

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/site/repair_orers_logo.svg" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="images/site/favicon.svg" type="image/x-icon"/>
+    <link rel="icon" href="images/site/favicon.png" type="image/x-icon"/>
     <title>Models | Repair Orders Manager</title>
 </head>
 <body>
