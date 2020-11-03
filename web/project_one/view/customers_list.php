@@ -9,7 +9,7 @@
     <title>Customers | Repair Orders Manager</title>
 </head>
 <body>
-    <div id="message-box" class=""><span class="message-span"><?php echo $message; ?></span</div>
+    <div id="message-box" class=""><span class="message-span"><?php echo $message; ?>Test Message</span></div>
     <header>
     <a href="index.php?action=home"><img src="images/site/repair_orders_logo.png" alt="Repair Orders Maganer Logo"></a>
         <a href="index.php?action=home"><h1>Repair Orders Manager</h1></a>
@@ -33,6 +33,13 @@
             </ul>
         </nav>
     </section>
+
+    <footer>
+        <hr>
+        <p>&copy; Carlos Macedo</p>
+        <p>All images used are believed to be in "Fair Use". Please notify the author if any are not and they will be removed.</p>
+        <p>Last updated: <?php echo date('jS F, Y', getlastmod()) ?></p>
+    </footer>
 
 </body>
 </html>
