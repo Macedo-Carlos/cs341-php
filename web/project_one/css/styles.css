@@ -20,7 +20,8 @@ header h1 {
 
 #side-menu {
   grid-area: side-menu;
-  padding: 20px 20px 20px 0;
+  padding: 20px 0 20px 0;
+  background-color: #eeeeef
 }
 
 ul {
@@ -30,23 +31,18 @@ ul {
 }
 
 li {
-  padding: 10px 20px;
+  padding: 10px 30px;
   transition: 0.3s;
-  border-bottom: 1px solid black;
   border-collapse: collapse;
 }
 
-li:first-child {
-  border-top: 1px solid black;
-}
-
 li:hover {
-  background-color: #dcdcdc;
+  background-color: #d0d0d0;
 }
 
 main {
   grid-area: main;
-  padding: 0 20%;
+  padding: 0 20px;
   margin-left: 20px;
   margin-bottom: 40px;
 }
