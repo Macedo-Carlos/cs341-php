@@ -15,7 +15,7 @@
         <a href="index.php?action=home"><h1>Repair Orders Manager</h1></a>
     </header>
     <main>
-        <h1>New Repair Order</h1>
+        <h1>Repair Order <?php echo $message; ?></h1>
         <div id="customerInfo">
         <?php echo $customerInfo; $message = "";?>
         </div>

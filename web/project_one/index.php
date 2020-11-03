@@ -125,7 +125,9 @@ case 'viewRepairOrder':
   $customerlastname = $repairOrder[0]['customerlastname'];
   $customerphone = $repairOrder[0]['customerphone'];
   $customerAddress = $repairOrder[0]['customeraddress'];
-  echo "Order number: " . $roNumber . "Order date: " . $roDate . "Customer ID: " . $customerId . "Model ID: " . $modelId;
+  $customer = searchByCustomerId($customerId);
+  $customerInfo = getCustomerInfo($customer);
+  include 'view/view_ro.php';
 break;
 default:
   $repairOrders = getOpenOrders();
