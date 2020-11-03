@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-}
-
 header {
+  grid-area: header;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background-color: #001738;
+  background-color: #8cb5f7;
 }
 
 header img {
@@ -18,13 +14,73 @@ header img {
 }
 
 header h1 {
-  color: #d4a97d;
   font-size: 3.15em;
   margin-left: 40px;
 }
 
+#side-menu {
+  grid-area: side-menu;
+  padding: 20px 20px 20px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.25em;
+}
+
+li {
+  padding: 10px 20px;
+  transition: 0.3s;
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+}
+
+li:first-child {
+  border-top: 1px solid black;
+}
+
+li:hover {
+  background-color: #dcdcdc;
+}
+
 main {
+  grid-area: main;
   padding: 0 20%;
+  margin-left: 20px;
+}
+
+main p {
+  font-size: 1.25em;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 1.25em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+th {
+  background-color: #86cb99;
+  padding: 10px 20px;
+}
+
+td {
+  padding: 5px 20px;
+}
+
+tr {
+  transition: 0.3s;
+}
+
+tr:nth-child(even){
+  background-color: #eeeeef;
+}
+
+tr:hover {
+  cursor: pointer;
+  background-color: #c0c0c0;
 }
 
 h2.scrRef {
@@ -52,16 +108,16 @@ form {
 }
 
 .formButton {
-  background-color: #001738;
+  background-color: #187f38;
   border: none;
   color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 1.25em;
   padding: 10px 20px;
-  margin: 0 20px;
+  margin: 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s
+  transition: 0.3s;
 }
 
 .formButton:hover{
@@ -82,38 +138,21 @@ label, input {
   font-size: 1.25em;
 }
 
-.grid-container {
-  display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.scripture-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 30px;
+input {
+  margin: 5px 10px;
+  padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid #999999ff;
-  transition: 0.3s;
+  border: 1px solid grey;
 }
 
-.scripture-card:hover {
-  box-shadow: 10px 10px 8px #888888;
-  cursor: pointer;
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template: 
+    'header header'
+    'side-menu main'
+    'footer footer';
+  grid-template-columns: 1fr 4fr;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
