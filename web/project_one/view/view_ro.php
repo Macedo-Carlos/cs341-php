@@ -31,20 +31,25 @@
             <div>
                 <label for="modelId">Select the model for repair</label>
                 <select name="modelId" id="modelId" required>
-                    <option value="0"></option>
                     <?php echo $modelOptions; ?>
                 </select>
             </div>
             <div>
                 <label for="roModelSn">Motor Serial Number</label>
-                <input type="text" name="roModelSn" id="roModelSn" required>
+                <input type="text" name="roModelSn" id="roModelSn" required value="<?php echo $roModelSn; ?>">
             </div>
             <div>
                 <label for="roProblem">Describe the problem:</label>
-                <textarea name="roProblem" id="roProblem" cols="75" rows="10" required></textarea>
+                <textarea name="roProblem" id="roProblem" cols="75" rows="10" required><?php echo $roProblem; ?></textarea>
             </div>
+            <div>
+                <label for="roStatus">Select the model for repair</label>
+                <select name="roStatus" id="roStatus" required>
+                    <?php echo $statusOptions; ?>
+                </select>
+            </div>
+
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
-            <input type="hidden" name="roNumber" value="<?php echo $roNumber; ?>">
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
