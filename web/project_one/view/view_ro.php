@@ -62,9 +62,9 @@
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
             <input type="hidden" name="repairOrderId" value="<?php echo $repairOrderId; ?>">
             <input type="hidden" name="action" value="updateRO">
-            <input class="formButton" type="submit" value="Create New Repair Order">
+            <input class="formButton" type="submit" value="Save Changes">
         </form>
-        <a class="formButton" href="index.php?action=customersList">Go Back</a>
+        <a class="formButton" href="index.php?action=home">Go Back</a>
     </main>
 
     <footer>

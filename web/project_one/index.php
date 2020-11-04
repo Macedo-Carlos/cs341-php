@@ -147,10 +147,11 @@ case 'updateRO':
   $serviceId = filter_input(INPUT_POST, 'serviceId', FILTER_SANITIZE_NUMBER_INT);
   $roStatus = filter_input(INPUT_POST, 'roStatus', FILTER_SANITIZE_STRING);
   $updateOutcome = updateRepairOrder($repairOrderId, $roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus);
+  $repairOrders = getOpenOrders();
+  $repairOrdersList = getRepairOrdersList($repairOrders);
   // Check and report the result
   if($updateOutcome === 1){
     $message = "<span class='message-span slide-down-up'>Repair order $roNumber has been updated</span>";
-    
     include 'view/home.php';
     exit;
   } else {
@@ -162,8 +163,6 @@ case 'updateRO':
 break; 
 default:
   $repairOrders = getOpenOrders();
-  print_r($repairOrders);
-  exit();
   $repairOrdersList = getRepairOrdersList($repairOrders);
   include 'view/home.php';
 break;
