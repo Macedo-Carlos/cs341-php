@@ -43,7 +43,7 @@
                 <textarea name="roProblem" id="roProblem" cols="75" rows="10" required><?php echo $roProblem; ?></textarea>
             </div>
             <div>
-                <label for="roStatus">Select the model for repair</label>
+                <label for="roStatus">Select the status of the order</label>
                 <select name="roStatus" id="roStatus" required>
                     <?php echo $statusOptions; ?>
                 </select>

@@ -116,16 +116,16 @@ function getStatusOptions($roStatus){
     $block .= ">Closed</option>";
     $block = "<option value='1'";
     if($roStatus == '1'){$block .= " selected='selected'";}
-    $block .= ">Closed</option>";
+    $block .= ">Order Received</option>";
     $block = "<option value='2'";
     if($roStatus == '2'){$block .= " selected='selected'";}
-    $block .= ">Closed</option>";
+    $block .= ">Waiting for parts</option>";
     $block = "<option value='3'";
     if($roStatus == '3'){$block .= " selected='selected'";}
-    $block .= ">Closed</option>";
+    $block .= ">Waiting for customer</option>";
     $block = "<option value='4'";
     if($roStatus == '4'){$block .= " selected='selected'";}
-    $block .= ">Closed</option>";
+    $block .= ">Ready for pick-up</option>";
     return $block;
 }
 
