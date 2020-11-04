@@ -129,6 +129,16 @@ function getStatusOptions($roStatus){
     return $block;
 }
 
+function getServiceOptionsAndSelected($services, $serviceId){
+    $block = "";
+    foreach($services as $service){
+        $block .= "<option value=$service[id]";
+        if($service['id'] == $serviceId){ $block .= " selected='selected'"; }
+        $block .= ">$service[servicename]</option>";
+    }
+    return $block;
+}
+
 ?>
 
 

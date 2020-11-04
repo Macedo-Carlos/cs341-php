@@ -40,12 +40,22 @@
             </div>
             <div>
                 <label for="roProblem">Describe the problem:</label>
-                <textarea name="roProblem" id="roProblem" cols="75" rows="10" required><?php echo $roProblem; ?></textarea>
+                <textarea name="roProblem" id="roProblem" cols="60" rows="10" required><?php echo $roProblem; ?></textarea>
             </div>
             <div>
                 <label for="roStatus">Select the status of the order</label>
                 <select name="roStatus" id="roStatus" required>
                     <?php echo $statusOptions; ?>
+                </select>
+            </div>
+            <div>
+                <label for="roDiagnosisNotes">Diagnosis and notes:</label>
+                <textarea name="roDiagnosisNotes" id="roDiagnosisNotes" cols="60" rows="10" required><?php echo $roDiagnosisNotes; ?></textarea>
+            </div>
+            <div>
+                <label for="serviceId">Select the repair service:</label>
+                <select name="serviceId" id="serviceId" required>
+                    <?php echo $serviceOptions; ?>
                 </select>
             </div>
 

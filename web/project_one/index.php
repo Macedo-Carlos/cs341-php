@@ -120,7 +120,8 @@ case 'viewRepairOrder':
   $roModelSn = $repairOrder[0]['romodelsn'];
   $roProblem = $repairOrder[0]['roproblem'];
   $roStatus = $repairOrder[0]['current_rostatus'];
-  $roType = $repairOrder[0]['current_rotype'];
+  $roDiagnosisNotes = $repairOrder[0]['rodiagnosisnotes'];
+  $serviceId = $repairOrder[0]['service_id'];
   $customerName = $repairOrder[0]['customername'];
   $customerlastname = $repairOrder[0]['customerlastname'];
   $customerphone = $repairOrder[0]['customerphone'];
@@ -130,6 +131,8 @@ case 'viewRepairOrder':
   $models = getAllModels();
   $modelOptions = getModelOptionsAndSelected($models, $modelId);
   $statusOptions = getStatusOptions($roStatus);
+  $services = getAllServices();
+  $serviceOptions = getServiceOptionsAndSelected($services, $serviceId);
   echo $roStatus;
   include 'view/view_ro.php';
 break;
