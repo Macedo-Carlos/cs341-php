@@ -130,6 +130,7 @@ case 'viewRepairOrder':
   $models = getAllModels();
   $modelOptions = getModelOptionsAndSelected($models, $modelId);
   $statusOptions = getStatusOptions($roStatus);
+  echo $roStatus;
   include 'view/view_ro.php';
 break;
 default:

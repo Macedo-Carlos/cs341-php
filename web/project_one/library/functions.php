@@ -111,21 +111,21 @@ function getServiceOptions($services){
 }
 
 function getStatusOptions($roStatus){
-    $block = "<option value='0'>";
-    if($roStatus == '0'){$block .= " selected='selected'";}
-    $block .= "Closed</option>";
-    $block = "<option value='1'>";
-    if($roStatus == '1'){$block .= " selected='selected'";}
-    $block .= "Order Received</option>";
-    $block = "<option value='2'>";
-    if($roStatus == '2'){$block .= " selected='selected'";}
-    $block .= "Waiting for parts</option>";
-    $block = "<option value='3'>";
-    if($roStatus == '3'){$block .= " selected='selected'";}
-    $block .= "Waiting for customer</option>";
-    $block = "<option value='4'>";
-    if($roStatus == '4'){$block .= " selected='selected'";}
-    $block .= "Ready for pick-up</option>";
+    $block = "<option value=0";
+    if($roStatus == '0'){ $block .= " selected='selected'"; }
+    $block .= ">Closed</option>";
+    $block .= "<option value=1";
+    if($roStatus == '1'){ $block .= " selected='selected'"; }
+    $block .= ">Order Received</option>";
+    $block .= "<option value=2";
+    if($roStatus == '2'){ $block .= " selected='selected'"; }
+    $block .= ">Waiting for parts</option>";
+    $block .= "<option value=3";
+    if($roStatus == '3'){ $block .= " selected='selected'"; }
+    $block .= ">Waiting for customer</option>";
+    $block .= "<option value=4";
+    if($roStatus == '4'){ $block .= " selected='selected'"; }
+    $block .= ">Ready for pick-up</option>";
     return $block;
 }
 
