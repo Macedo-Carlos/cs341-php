@@ -51,7 +51,7 @@ case 'addNewCustomer':
   $regOutcome = addNewCustomer($customername, $customerlastname, $customerphone, $customeraddress);
   // Check and report the result
   if($regOutcome === 1){
-    $message = "$customername $customerlastname has been added to the customer's list.";
+    $message = "<span class='message-span slide-down-up'>$customername $customerlastname has been added to the customer's list</span>";
     
     include 'view/customers_list.php';
     exit;
@@ -133,9 +133,33 @@ case 'viewRepairOrder':
   $statusOptions = getStatusOptions($roStatus);
   $services = getAllServices();
   $serviceOptions = getServiceOptionsAndSelected($services, $serviceId);
-  echo $roStatus;
   include 'view/view_ro.php';
 break;
+case 'updateRO':
+  $repairOrderId = filter_input(INPUT_POST, 'repairOrderId', FILTER_SANITIZE_STRING);
+  $roNumber = filter_input(INPUT_POST, 'roNumber', FILTER_SANITIZE_NUMBER_INT);
+  $roDate = filter_input(INPUT_POST, 'roDate', FILTER_SANITIZE_STRING);
+  $customerId = filter_input(INPUT_POST, 'customerId', FILTER_SANITIZE_STRING);
+  $modelId = filter_input(INPUT_POST, 'modelId', FILTER_SANITIZE_NUMBER_INT);
+  $roModelSn = filter_input(INPUT_POST, 'roModelSn', FILTER_SANITIZE_STRING);
+  $roProblem = filter_input(INPUT_POST, 'roProblem', FILTER_SANITIZE_STRING);
+  $roDiagnosisNotes = filter_input(INPUT_POST, 'roDiagnosisNotes', FILTER_SANITIZE_STRING);
+  $serviceId = filter_input(INPUT_POST, 'serviceId', FILTER_SANITIZE_NUMBER_INT);
+  $roStatus = filter_input(INPUT_POST, 'roStatus', FILTER_SANITIZE_STRING);
+  $updateOutcome = updateRepairOrder($repairOrderId, $roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus);
+  // Check and report the result
+  if($updateOutcome === 1){
+    $message = "<span class='message-span slide-down-up'>Repair order $roNumber has been updated</span>";
+    
+    include 'view/home.php';
+    exit;
+  } else {
+    $message = "<span class='message-span slide-down-up'>$customername $customerlastname failed to be added to the customer's list, please try again</span>";
+    $_SESSION['message'] = $message;
+    include 'view/home.php';
+    exit;
+  }
+break; 
 default:
   $repairOrders = getOpenOrders();
   print_r($repairOrders);

@@ -60,9 +60,7 @@
             </div>
 
             <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
-            <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
-            <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
-            <input type="hidden" name="customerId" value="<?php echo $customerId; ?>">
+            <input type="hidden" name="repairOrderId" value="<?php echo $repairOrderId; ?>">
             <input type="hidden" name="action" value="updateRO">
             <input class="formButton" type="submit" value="Create New Repair Order">
         </form>

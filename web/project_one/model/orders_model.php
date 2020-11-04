@@ -164,4 +164,31 @@ function getRoInfoById($repairOrderId){
     return $response;
 }
 
+function updateRepairOrder($repairOrderId, $roNumber, $roDate, $customerId, $modelId, $roModelSn, $roProblem, $roDiagnosisNotes, $serviceId, $roStatus){
+    // Create a connection object using the db connection function
+    $db = herokuConnect();
+    // The SQL statement
+    $sql = "UPDATE repairorders
+            SET ronumber = '$roNumber',
+                rodate = '$roDate',
+                customer_id = '$customerId',
+                model_id = '$modelId',
+                romodelsn = '$roModelSn',
+                roproblem = '$roProblem',
+                rodiagnosisnotes = '$roDiagnosisNotes',
+                service_id = '$serviceId',
+                current_rostatus = '$roStatus'
+            WHERE id = $repairOrderId";
+    // Create the prepared statement using the db connection
+    $stmt = $db->prepare($sql);
+    // Insert the data
+    $stmt->execute();
+    // Ask how many rows changed as a result of our insert
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
+}
+
 ?>
