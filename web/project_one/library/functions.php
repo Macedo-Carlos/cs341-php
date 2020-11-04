@@ -27,15 +27,15 @@ function getCustomersList($customers){
 function getStatusDescription($statusEnum){
     $status = "";
     switch ($statusEnum){
-        case "0":
+        case 0:
             $status = "Closed";
-        case "1":
+        case 1:
             $status = "Order Received";
-        case "2":
+        case 2:
             $status = "Waiting for Parts";
-        case "3":
+        case 3:
             $status = "Waiting for Customer";
-        case "4":
+        case 4:
             $status = "Ready for Pick-Up";
         default:
             echo 'default';
