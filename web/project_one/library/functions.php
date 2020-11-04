@@ -5,8 +5,6 @@ function getRepairOrdersList($repairOrders){
     $block = "<table class='lists-table'><tr><th>RO Number</th><th>Order Date</th><th>Customer</th><th>Order Status</th></tr>";
     foreach ($repairOrders as $order) {
         $currentStatus = getStatusDescription($order['current_rostatus']);
-        echo $order['current_rostatus'];
-        echo $currentStatus;
         $orderId = $order['id'];
         $block .= "<tr onclick=window.location='index.php?action=viewRepairOrder&repairOrderId=$orderId';><td>$order[ronumber]</td><td>$order[rodate]</td><td>$order[customername] $order[customerlastname]</td><td>$currentStatus</td></tr>";
     }
@@ -25,21 +23,32 @@ function getCustomersList($customers){
 }
 
 function getStatusDescription($statusEnum){
+    if($statusEnum === 1){
+        echo 'is int ';
+    }
+    if($statusEnum === '1'){
+        echo 'is str';
+    }
     $status = "";
     switch ($statusEnum){
         case 0:
             $status = "Closed";
+        break;
         case 1:
             $status = "Order Received";
+        break;
         case 2:
             $status = "Waiting for Parts";
+        break;
         case 3:
             $status = "Waiting for Customer";
+        break;
         case 4:
             $status = "Ready for Pick-Up";
+        break;
         default:
-            echo 'default';
             $status = "Order Received";
+        break;
     }
     return $status;
 }
